@@ -1,0 +1,10 @@
+{
+    "@meta": {"nullable": true},
+    "id": 772,
+    "workYearsId": 81,
+    "curSalary": 10000.0,
+    "developerId": 376,
+    "careerDirectionId": 163,
+    "careerDirectionName": "移动开发",
+    "workYearsName": "1年"
+}

@@ -1,0 +1,13 @@
+
+    {
+        "@meta": {"nullable": true},
+        "id": 766,
+        "workDayMode": 1,
+        "developerId": 376,
+        "expectSalary": 10.0,
+        "lowestSalary": 10.0,
+        "highestSalary": 1110.0,
+        "hourlyPay": null,
+        "workDayModeName": "全日",
+        "workDayModeDesc": "日均工作8小时 / 每周工作40小时"
+    }

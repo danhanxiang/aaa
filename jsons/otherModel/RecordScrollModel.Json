@@ -1,0 +1,9 @@
+{
+    "@meta": { "nullable": true },
+    "id": 91,
+    "name": "专科",
+    "parentId": 5,
+    "status": 1,
+    "typeId": null,
+    "children": null
+}

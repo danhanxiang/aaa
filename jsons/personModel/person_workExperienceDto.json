@@ -1,0 +1,12 @@
+
+    {
+        "@meta": {"nullable": true},
+        "id": 295,
+        "developerId": 376,
+        "companyName": "3333",
+        "industryId": 1001,
+        "positionName": "33333",
+        "workStartTime": "1970-01",
+        "workEndTime": "2022-06",
+        "industryName": "电子商务"
+    }

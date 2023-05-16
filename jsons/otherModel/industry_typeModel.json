@@ -1,0 +1,9 @@
+{
+    "@meta": { "nullable": true },
+    "id": 1001,
+    "name": "电子商务",
+    "parentId": 101,
+    "status": 1,
+    "typeId": null,
+    "children": null
+}

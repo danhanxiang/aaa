@@ -1,0 +1,10 @@
+{
+    "@meta": { "nullable": true },
+    "id": 11010100,
+    "regionName": "东城区",
+    "regionShortName": "东城区",
+    "regionCode": "11010100",
+    "parentId": 110100,
+    "regionLevel": 3,
+    "children": null
+}

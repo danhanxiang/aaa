@@ -1,0 +1,7 @@
+{
+    "@meta": { "nullable": true },
+	"id": 100000,
+	"skillName": "编程语言",
+	"parentId": 427,
+	"children":"$[]skillsClassModel"
+}

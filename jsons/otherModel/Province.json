@@ -1,0 +1,10 @@
+{
+    "@meta": { "nullable": true },
+    "id": 110000,
+    "regionName": "北京市",
+    "regionShortName": "北京市",
+    "regionCode": "110000",
+    "parentId": null,
+    "regionLevel": 1,
+    "children": "$[]city"
+}

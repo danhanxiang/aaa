@@ -1,0 +1,30 @@
+{
+    "@meta": { "nullable": true },
+    "positionId": 138,
+    "title": "安卓测试推送",
+    "workDaysModeName": "全日",
+    "startPay": 1.0,
+    "endPay": 500.0,
+    "recruitCount": 1,
+    "workYearsName": "1年",
+    "educationName": "专科",
+    "skillNames": [
+        "Python",
+        "JavaScript",
+        "Assembly language",
+        "Delphi/Object Pascal",
+        "Ada",
+        "Apex",
+        "KnockoutJS",
+        "响应式网页设计"
+    ],
+    "description": "安卓测试推送",
+    "companyName": "上海黄焖鸡公司",
+    "companyIndustryName": "餐饮",
+    "companyPersonSizeName": "20-99人",
+    "companyTeamToolsDescNames": [
+        "企业微信",
+        "腾讯会议"
+    ],
+    "selfRecommendStatus": true
+}

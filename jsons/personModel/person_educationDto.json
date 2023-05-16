@@ -1,0 +1,16 @@
+
+
+    {
+        "@meta": {"nullable": true},
+        "id": 442,
+        "developerId": 376,
+        "educationId": 93,
+        "collegeName": "测试学",
+        "major": "哈哈",
+        "inSchoolStartTime": "1970-01",
+        "inSchoolEndTime": "2022-06",
+        "trainingMode": 96,
+        "educationName": "硕士",
+        "trainingModeName": "全日制"
+    }
+    

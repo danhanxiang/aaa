@@ -1,0 +1,9 @@
+{
+    "@meta": { "nullable": true },
+    "id": 96,
+    "name": "全日制",
+    "parentId": 7,
+    "status": 1,
+    "typeId": null,
+    "children": null
+}

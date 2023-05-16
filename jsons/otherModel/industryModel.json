@@ -1,0 +1,9 @@
+{
+    "@meta": { "nullable": true },
+	"id": 101,
+	"name": "互联网",
+	"parentId": 1,
+	"status": 1,
+	"typeId": null,
+	"children": "$[]industry_typeModel"
+}

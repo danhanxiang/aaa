@@ -1,0 +1,18 @@
+{
+  "id": 815,
+  "realName?": "喵呜",
+  "mobile": "19121616807",
+  "avatarUrl?": "http://www.baidu.com",
+  "careerDirectionId": 161,
+  "careerDirectionName?": "后端开发",
+  "cityName?": "北京市",
+  "curSalary": 8000.0,
+  "workYearsId": 81,
+  "workYearsName?": "1年",
+  "skillName": "Python,C,Java,Spring Boot",
+  "expectSalary": 13000.0,
+  "workDayMode": 1,
+  "workDayModeName?": "全日",
+  "educationId": 91,
+  "educationName?": "专科"
+}
