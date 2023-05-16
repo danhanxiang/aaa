@@ -16,8 +16,9 @@ import '../../../../core/models/index.dart';
 
 class add_projectView extends StatefulWidget {
   static const String routeName = '/add_project';
-  add_projectView({Key? key, required this.StateMap}) : super(key: key);
+  add_projectView({Key? key, required this.StateMap, required this.careerDirectionId}) : super(key: key);
   Map StateMap;
+  String careerDirectionId;
   @override
   State<add_projectView> createState() => _add_projectViewState();
 }
@@ -250,20 +251,23 @@ class _add_projectViewState extends State<add_projectView> {
                 ),
                 m_textFiledBtn(
                   onTap: () {
-                    Navigator.of(context)
-                        .pushNamed(choose_skillsView.routeName, arguments: projectDtoModel)
+                    // 避免深拷贝
+                    List<SkillsClassModel> projectSkillList = [];
+                    projectSkillList.addAll(projectDtoModel.projectSkillList??[]);
+                    Navigator.of(context).pushNamed(choose_skillsView.routeName, arguments: [projectSkillList, widget.careerDirectionId])
                         .then((value) {
-                      List<SkillsClassModel>? list =
-                          value as List<SkillsClassModel>?;
-                      setState(() {
-                        selectedSkillsIDList = [];
-                        selectedSkillsTextList = [];
-                        for (SkillsClassModel model in list!) {
-                          selectedSkillsIDList.add(model.id.toString());
-                          selectedSkillsTextList.add(model.skillName ?? "");
-                        }
-                        selectedSkillsModelList = list;
-                      });
+                          print('value:$value');
+                          if (value == null) { return; }
+                          List<SkillsClassModel>? list = value as List<SkillsClassModel>?;
+                          setState(() {
+                            selectedSkillsIDList = [];
+                            selectedSkillsTextList = [];
+                            for (SkillsClassModel model in list!) {
+                              selectedSkillsIDList.add(model.id.toString());
+                              selectedSkillsTextList.add(model.skillName ?? "");
+                            }
+                          selectedSkillsModelList = list;
+                        });
                     });
                   },
                   hintText: "请选择使用技能",

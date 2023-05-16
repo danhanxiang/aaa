@@ -11,6 +11,7 @@ json_model 使用方法  https://github.com/flutterchina/json_model
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:people_living_flutterdemo/ProjectConfig/WchatManager.dart';
 import 'package:people_living_flutterdemo/core/router/router.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
@@ -23,10 +24,17 @@ import 'ui/shared/app_size_fit.dart';
 
 void main() {
   setupLocator(); //注册NavigatorState 实例
+ 
   User.init().then((value) {
     // runApp(BKMyApp());
     runApp(MyApp());
+    // SystemChrome.setSystemUIOverlayStyle(
+    //   SystemUiOverlayStyle.light.copyWith(
+    //     statusBarColor: Colors.white,//这里替换你选择的颜色
+    //   ),
+    // );
   });
+
 }
 
 /** 页面跳转有2种方式
@@ -48,7 +56,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // 初始化手机大小
     BKSizeFit.initialize();
-    
+    initWeChat();
     return MaterialApp(
       title: '天天数链',
       debugShowCheckedModeBanner: false, //隐藏右上角debug 标签
@@ -70,6 +78,15 @@ class MyApp extends StatelessWidget {
       },
     );
   }
+
+
+  /// 注册微信分享
+  initWeChat(){
+    WchatManager.initFluwx((error) {
+      EasyLoading.showError(error, duration: const Duration(seconds: 3));
+    });
+  }
+
 }
 
 class MineImagesPage extends StatefulWidget {

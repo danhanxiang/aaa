@@ -10,6 +10,8 @@ class MainButton extends StatelessWidget {
   final double width;
   final color;
   final disable;
+  final double borderRadius;
+  
   const MainButton({
     this.text = '我是自定义按钮',
     this.heigth = 50.0,
@@ -17,6 +19,7 @@ class MainButton extends StatelessWidget {
     this.OnPressed = null,
     this.color = m_colors.backColor,
     this.disable = true,
+    this.borderRadius = 0
   });
 
   @override
@@ -25,8 +28,8 @@ class MainButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
-            child: Container(
-          margin: EdgeInsets.fromLTRB(this.width, 0, this.width, 60),
+          child: Container(
+          // margin: EdgeInsets.fromLTRB(this.width, 0, this.width, 30),
           height: this.heigth,
           child: ElevatedButton(
             onPressed: disable ? this.OnPressed : null,
@@ -37,11 +40,15 @@ class MainButton extends StatelessWidget {
                     : MaterialStateProperty.all(m_colors.disableColor),
                 foregroundColor: MaterialStateProperty.all(Colors.white),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(heigth / 2)))),
+                    borderRadius: BorderRadius.circular(getBorderRadius()) ))),
           ),
         ))
       ],
     );
+  }
+
+  double getBorderRadius(){
+    return borderRadius == 0 ? heigth / 2 : borderRadius;
   }
 }
 

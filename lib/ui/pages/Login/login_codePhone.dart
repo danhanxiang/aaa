@@ -1,12 +1,9 @@
 import 'dart:async';
-import 'dart:ffi';
-import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 // import 'package:flutter_easyloading/flutter_easyloading.dart';
-import '../../../../ProjectConfig/Navigate/NavigateService.dart';
-import '../main/Tabs.dart';
 import '../../../core/components/m_AppBar.dart';
 import '../../../core/components/m_mainButton.dart';
 import '../../../core/service/userLogin_api/user_Login.dart';
@@ -43,7 +40,7 @@ class _CodePhoneViewState extends State<CodePhoneView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: m_AppBar(context, "验证码登录"),
+      appBar: m_AppBar(context, "验证码登录", color: Colors.white),
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -171,7 +168,7 @@ class _CodePhoneViewState extends State<CodePhoneView> {
         if (object.isSuccess) {
           if (object.code == 200 && object.data['access_token'].toString().isNotEmpty) {
             print("-------获取用户数据-----");
-            LoginService.GetUserInfo((object) {
+            LoginService.GetDevUserInfo((object) {
               if (object.isSuccess) {
                 EasyLoading.showToast('登录成功');
                 // print("登录");

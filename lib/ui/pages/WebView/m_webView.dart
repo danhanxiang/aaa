@@ -1,6 +1,7 @@
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter/material.dart';
 import 'package:people_living_flutterdemo/ProjectConfig/m_colors.dart';
+import 'package:people_living_flutterdemo/core/components/m_AppBar.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:io' show Platform;
 import 'dart:collection';
@@ -48,7 +49,7 @@ class _inAppWebViewState extends State<inAppWebView> {
 
     pullToRefreshController = PullToRefreshController(
       options: PullToRefreshOptions(
-        color: Colors.blue,
+        color: Colors.black,
       ),
       onRefresh: () async {
         if (Platform.isAndroid) {
@@ -75,15 +76,7 @@ class _inAppWebViewState extends State<inAppWebView> {
     String title = widget.baseDic["title"];
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            title,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-          backgroundColor: Colors.white,
-          elevation: 0,
-          foregroundColor: Colors.black,
-        ),
+        appBar:m_AppBar(context, title),
 
         //drawer: myDrawer(context: context),
         body: SafeArea(
@@ -170,29 +163,29 @@ class _inAppWebViewState extends State<inAppWebView> {
               ],
             ),
           ),
-          ButtonBar(
-            alignment: MainAxisAlignment.center,
-            children: <Widget>[
-              ElevatedButton(
-                child: Icon(Icons.arrow_back),
-                onPressed: () {
-                  webViewController?.goBack();
-                },
-              ),
-              ElevatedButton(
-                child: Icon(Icons.arrow_forward),
-                onPressed: () {
-                  webViewController?.goForward();
-                },
-              ),
-              ElevatedButton(
-                child: Icon(Icons.refresh),
-                onPressed: () {
-                  webViewController?.reload();
-                },
-              ),
-            ],
-          ),
+          // ButtonBar(
+          //   alignment: MainAxisAlignment.center,
+          //   children: <Widget>[
+          //     ElevatedButton(
+          //       child: Icon(Icons.arrow_back),
+          //       onPressed: () {
+          //         webViewController?.goBack();
+          //       },
+          //     ),
+          //     ElevatedButton(
+          //       child: Icon(Icons.arrow_forward),
+          //       onPressed: () {
+          //         webViewController?.goForward();
+          //       },
+          //     ),
+          //     ElevatedButton(
+          //       child: Icon(Icons.refresh),
+          //       onPressed: () {
+          //         webViewController?.reload();
+          //       },
+          //     ),
+          //   ],
+          // ),
         ])));
   }
 }

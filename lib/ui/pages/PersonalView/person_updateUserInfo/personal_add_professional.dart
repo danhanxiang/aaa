@@ -3,7 +3,10 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_pickers/pickers.dart';
 import 'package:flutter_pickers/style/default_style.dart';
 import 'package:people_living_flutterdemo/core/components/m_AppBar.dart';
+import 'package:people_living_flutterdemo/core/models/otherModel/OtherManager.dart';
 import 'package:people_living_flutterdemo/core/service/personal_api/personal_api.dart';
+import 'package:people_living_flutterdemo/ui/pages/PersonalView/person_updateUserInfo/personal_careerDirection.dart';
+import 'package:people_living_flutterdemo/ui/shared/app_size_fit.dart';
 
 import '../../../../core/components/m_mainButton.dart';
 import '../../../../core/components/m_textFiled.dart';
@@ -40,18 +43,18 @@ class _add_professionalViewState extends State<add_professionalView> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    PersonalService.getPositionType((object) {
-      if (object.isSuccess) {
-        setState(() {
-          PositionModelList = object.data;
-          for (var model in PositionModelList) {
-            PositiontextList.add(model.name);
-          }
-        });
-      } else {
-        EasyLoading.showToast("职业方向数据获取失败");
-      }
-    });
+    // PersonalService.getPositionType((object) {
+    //   if (object.isSuccess) {
+    //     setState(() {
+    //       PositionModelList = object.data;
+    //       for (var model in PositionModelList) {
+    //         PositiontextList.add(model.name);
+    //       }
+    //     });
+    //   } else {
+    //     EasyLoading.showToast("职业方向数据获取失败");
+    //   }
+    // });
     PersonalService.getWorkAgRequirements((object) {
       if (object.isSuccess) {
         setState(() {
@@ -103,24 +106,38 @@ class _add_professionalViewState extends State<add_professionalView> {
       body: Stack(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height,
             child: Column(
               children: [
                 m_textFiledBtn(
                   onTap: () {
-                    Pickers.showSinglePicker(context,
-                        data: PositiontextList,
-                        selectData: PositionStr,
-                        pickerStyle: ClosePickerStyle(
-                          haveRadius: true,
-                          title: "请选择职业方向",
-                        ), onChanged: (p, index) {
-                      print(index);
-                      setState(() {
-                        PositionStr = p;
-                        PositionID = PositionModelList[index].id.toString();
-                      });
+                    Navigator.pushNamed(context, personal_careerDirection.routeName).then((value) {
+                      /// 拿到职业分类选中数据
+                      if (value != null) {
+                        OtherModel m = value as OtherModel;
+                        widget.userDataModel.careerDto?.careerDirectionName = m.name;
+                        PositionID = m.id.toString();
+                        setState(() {
+                          PositionStr = m.name ?? '';
+                        });
+                      }
                     });
+
+                    // final List<String> _response = await Navigator.of(context).pushNamed(personal_careerDirection.routeName);
+                    
+                    // print(model?.name ?? '');
+                    // Pickers.showSinglePicker(context,
+                    //     data: PositiontextList,
+                    //     selectData: PositionStr,
+                    //     pickerStyle: ClosePickerStyle(
+                    //       haveRadius: true,
+                    //       title: "请选择职业方向",
+                    //     ), onChanged: (p, index) {
+                    //   print(index);
+                    //   setState(() {
+                    //     PositionStr = p;
+                    //     PositionID = PositionModelList[index].id.toString();
+                    //   });
+                    // });
                   },
                   hintText: "请选择职业方向",
                   TextEditingtext: PositionStr,
@@ -272,13 +289,13 @@ class _add_professionalViewState extends State<add_professionalView> {
     } else if (WorktypeStr.length <= 0) {
       EasyLoading.showToast("工作方式不能为空");
       return false;
-    } else if (int.parse(minPriceStr) <= 0) {
+    } else if (double.parse(minPriceStr) <= 0) {
       EasyLoading.showToast("期望最低价格不能为空");
       return false;
-    } else if (int.parse(maxPriceStr) <= 0) {
+    } else if (double.parse(maxPriceStr) <= 0) {
       EasyLoading.showToast("期望最高价格不能为空");
       return false;
-    } else if (int.parse(minPriceStr) > int.parse(maxPriceStr)) {
+    } else if (double.parse(minPriceStr) > double.parse(maxPriceStr)) {
       EasyLoading.showToast("最低价格不能大于最高价格");
       return false;
     } else {

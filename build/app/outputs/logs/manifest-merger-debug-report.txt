@@ -1,0 +1,641 @@
+-- Merging decision tree log ---
+application
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml:3:4-34:19
+MERGED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:19:5-50:19
+MERGED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:19:5-50:19
+MERGED from [:image_picker_android] /Users/danwanli/motion/ttc_flutter_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:image_picker_android] /Users/danwanli/motion/ttc_flutter_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:url_launcher_android] /Users/danwanli/motion/ttc_flutter_app/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-14:19
+MERGED from [:url_launcher_android] /Users/danwanli/motion/ttc_flutter_app/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-14:19
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:30:5-37:19
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:30:5-37:19
+MERGED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:15:5-48:19
+MERGED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:15:5-48:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/b0a43f0ed4ed5bb6ad1d5ad7065c61a9/transformed/lifecycle-extensions-2.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/b0a43f0ed4ed5bb6ad1d5ad7065c61a9/transformed/lifecycle-extensions-2.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.8.0] /Users/danwanli/.gradle/caches/transforms-3/d8d02a069ae5008cf8447a10b6ed081f/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.8.0] /Users/danwanli/.gradle/caches/transforms-3/d8d02a069ae5008cf8447a10b6ed081f/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/danwanli/.gradle/caches/transforms-3/960244532fbc8c10054f178646dcb081/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/danwanli/.gradle/caches/transforms-3/960244532fbc8c10054f178646dcb081/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/4cde7e7e135356a22e20808e1431db79/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/4cde7e7e135356a22e20808e1431db79/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/1b188ed5081a6f7403d3650185b897c7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/1b188ed5081a6f7403d3650185b897c7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:22:5-51:19
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:22:5-51:19
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Map:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/9099e47f8e8de7ea10666b09b07fb88d/transformed/jetified-BaiduMapSDK_Map-7.5.5/AndroidManifest.xml:11:5-20
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Map:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/9099e47f8e8de7ea10666b09b07fb88d/transformed/jetified-BaiduMapSDK_Map-7.5.5/AndroidManifest.xml:11:5-20
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Search:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/23cc6fce5b1fdcdd3d17226cfeb73f67/transformed/jetified-BaiduMapSDK_Search-7.5.5/AndroidManifest.xml:11:5-20
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Search:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/23cc6fce5b1fdcdd3d17226cfeb73f67/transformed/jetified-BaiduMapSDK_Search-7.5.5/AndroidManifest.xml:11:5-20
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Util:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/c6dea9748d390ae3a0102ffcee4a98a7/transformed/jetified-BaiduMapSDK_Util-7.5.5/AndroidManifest.xml:11:5-20
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Util:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/c6dea9748d390ae3a0102ffcee4a98a7/transformed/jetified-BaiduMapSDK_Util-7.5.5/AndroidManifest.xml:11:5-20
+MERGED from [com.baidu.lbsyun:base:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/d1b6c387231a762ded297f696f852927/transformed/jetified-base-7.5.5/AndroidManifest.xml:11:5-20
+MERGED from [com.baidu.lbsyun:base:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/d1b6c387231a762ded297f696f852927/transformed/jetified-base-7.5.5/AndroidManifest.xml:11:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.8.0] /Users/danwanli/.gradle/caches/transforms-3/d8d02a069ae5008cf8447a10b6ed081f/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+	android:name
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml
+manifest
+ADDED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+MERGED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+MERGED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-52:12
+MERGED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-19:12
+MERGED from [:image_picker_android] /Users/danwanli/motion/ttc_flutter_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-21:12
+MERGED from [:flutter_baidu_mapapi_map] /Users/danwanli/motion/ttc_flutter_app/build/flutter_baidu_mapapi_map/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:flutter_plugin_android_lifecycle] /Users/danwanli/motion/ttc_flutter_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:umeng_verify_sdk] /Users/danwanli/motion/ttc_flutter_app/build/umeng_verify_sdk/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:umeng_common_sdk] /Users/danwanli/motion/ttc_flutter_app/build/umeng_common_sdk/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:url_launcher_android] /Users/danwanli/motion/ttc_flutter_app/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-16:12
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-39:12
+MERGED from [:shared_preferences_android] /Users/danwanli/motion/ttc_flutter_app/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:permission_handler_android] /Users/danwanli/motion/ttc_flutter_app/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-50:12
+MERGED from [:package_info_plus] /Users/danwanli/motion/ttc_flutter_app/build/package_info_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:device_info_plus] /Users/danwanli/motion/ttc_flutter_app/build/device_info_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:video_player_android] /Users/danwanli/motion/ttc_flutter_app/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:flutter_baidu_mapapi_base] /Users/danwanli/motion/ttc_flutter_app/build/flutter_baidu_mapapi_base/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [id.zelory:compressor:3.0.1] /Users/danwanli/.gradle/caches/transforms-3/42ead3b9a60cc6b9f640d47e37f8a82c/transformed/jetified-compressor-3.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/13f4ba9073ad3955f6b389f198634c22/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/danwanli/.gradle/caches/transforms-3/1526dbedcb33d78eff6013e3a2aa5c68/transformed/jetified-appcompat-resources-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/danwanli/.gradle/caches/transforms-3/dfad611ff7c07b0238bfb0182ee0b30c/transformed/appcompat-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/b0a43f0ed4ed5bb6ad1d5ad7065c61a9/transformed/lifecycle-extensions-2.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/danwanli/.gradle/caches/transforms-3/b131a95b05b8346fb01bf5bb5aec70c5/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.6.1] /Users/danwanli/.gradle/caches/transforms-3/152189b2bca9eb8edd777d186c3ac5ee/transformed/jetified-activity-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/3c2489b1d3c3190e38e4e63a3feac70c/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/54441a6af38d4c89ebc5f25f8d309975/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/61b2895ea0e0bdf1d55fe0fb75e7e051/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/34b2119afea82154f0e1b0934dc13df8/transformed/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.tencent.mm.opensdk:wechat-sdk-android:6.8.24] /Users/danwanli/.gradle/caches/transforms-3/b77aeac3dd193b1b49bacdc97e1446e3/transformed/jetified-wechat-sdk-android-6.8.24/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.webkit:webkit:1.5.0] /Users/danwanli/.gradle/caches/transforms-3/c7d6b54a3111bf14a015a99b85721a70/transformed/webkit-1.5.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.4.0] /Users/danwanli/.gradle/caches/transforms-3/adb92caa0d12f7619eb88b0eb49497a5/transformed/browser-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/99a19a6c5399da13388047e174ec5425/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/d4971e5e16bb63600c13134ba9b700d4/transformed/jetified-exoplayer-hls-2.18.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/7225ca52828514f8e56c4d630a10122f/transformed/jetified-exoplayer-dash-2.18.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/5c22d4b3d495077c880201434892e349/transformed/jetified-exoplayer-smoothstreaming-2.18.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/f7ee3094868f6d81001ffdbe2e84cf51/transformed/jetified-exoplayer-core-2.18.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/danwanli/.gradle/caches/transforms-3/4bb222083c861b478b8313d22816b620/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/da001e148deea070748f5f2b80518498/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/fd6ad3c8f4a2d0316b5f18feb3518453/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/a73d19872570227d5597908cf14977e9/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/e7d075a447fa84b72ece37849d711e83/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/c45e5f36ceae9a24d60aa90cef7be55d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/4bd82f4790ad652d08b0c5a017de6dfd/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.8.0] /Users/danwanli/.gradle/caches/transforms-3/d8d02a069ae5008cf8447a10b6ed081f/transformed/core-1.8.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/danwanli/.gradle/caches/transforms-3/4fa1df9140677f57f625d25460264409/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/7704bad0fd350c77c149fd543e5c3a2b/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/danwanli/.gradle/caches/transforms-3/960244532fbc8c10054f178646dcb081/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/4cde7e7e135356a22e20808e1431db79/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/dfd8b49368318e943e2c335e3f546e2c/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/fd53523d894e6ddcc769b9c4a6fac5a6/transformed/jetified-lifecycle-service-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/62b292e08e2e622d0ce90496c3e2adea/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/a90b320de1f7d92bd45bd2f76b5d1f62/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/ad7c2db389b1bf4b9bb9b8b7009cd1fd/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/1b188ed5081a6f7403d3650185b897c7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/95750590bbe558c90fe04fe1121ae967/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/eaf4a47384fe739ec1158a90a19a1552/transformed/jetified-exoplayer-datasource-2.18.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/8c44903f846607336d994c3564aa10a4/transformed/jetified-exoplayer-extractor-2.18.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-decoder:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/ae187b4b3d6bd78de2ff0a5b1a391e6a/transformed/jetified-exoplayer-decoder-2.18.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-database:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/8800cc8114a5888442de929c27396eca/transformed/jetified-exoplayer-database-2.18.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/b1e07410d4905a9f28c4b2a01ba23141/transformed/jetified-exoplayer-common-2.18.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/6566782e7f0935567a2184011731ffd7/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/07631916bcdbd05077f1836d38629454/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/danwanli/.gradle/caches/transforms-3/3d6aef3fc693a451c807b15ada89238c/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:2:1-53:12
+MERGED from [com.umeng.umsdk:uverify-main:2.1.3.2] /Users/danwanli/.gradle/caches/transforms-3/a7d9138339c0492017a7e6da4fba060c/transformed/jetified-uverify-main-2.1.3.2/AndroidManifest.xml:2:1-11:12
+MERGED from [com.umeng.umsdk:uverify-logger:2.1.3.2] /Users/danwanli/.gradle/caches/transforms-3/4a7da8210239e92cb30280660cdf0188/transformed/jetified-uverify-logger-2.1.3.2/AndroidManifest.xml:2:1-11:12
+MERGED from [com.umeng.umsdk:uverify-crashshield:2.1.3.2] /Users/danwanli/.gradle/caches/transforms-3/387b368472d67ab463855ad11f2c7537/transformed/jetified-uverify-crashshield-2.1.3.2/AndroidManifest.xml:2:1-11:12
+MERGED from [com.umeng.umsdk:asms:1.4.1] /Users/danwanli/.gradle/caches/transforms-3/bd2b984cd3e26b89a5b1c0f7f8402ca0/transformed/jetified-asms-1.4.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Location_All:9.4.0] /Users/danwanli/.gradle/caches/transforms-3/25b45ee61d6731e1f9b8a21763a7c503/transformed/jetified-BaiduMapSDK_Location_All-9.4.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Map:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/9099e47f8e8de7ea10666b09b07fb88d/transformed/jetified-BaiduMapSDK_Map-7.5.5/AndroidManifest.xml:2:1-13:12
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Search:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/23cc6fce5b1fdcdd3d17226cfeb73f67/transformed/jetified-BaiduMapSDK_Search-7.5.5/AndroidManifest.xml:2:1-13:12
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Util:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/c6dea9748d390ae3a0102ffcee4a98a7/transformed/jetified-BaiduMapSDK_Util-7.5.5/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/8e85f8df9ffbe96059118124eac9be7a/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.baidu.lbsyun:base:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/d1b6c387231a762ded297f696f852927/transformed/jetified-base-7.5.5/AndroidManifest.xml:2:1-13:12
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml:1:1-8:12
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml:1:1-8:12
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml:1:1-8:12
+	package
+		ADDED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml:2:5-40
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml
+MERGED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:image_picker_android] /Users/danwanli/motion/ttc_flutter_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:image_picker_android] /Users/danwanli/motion/ttc_flutter_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_baidu_mapapi_map] /Users/danwanli/motion/ttc_flutter_app/build/flutter_baidu_mapapi_map/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_baidu_mapapi_map] /Users/danwanli/motion/ttc_flutter_app/build/flutter_baidu_mapapi_map/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] /Users/danwanli/motion/ttc_flutter_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] /Users/danwanli/motion/ttc_flutter_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:umeng_verify_sdk] /Users/danwanli/motion/ttc_flutter_app/build/umeng_verify_sdk/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:umeng_verify_sdk] /Users/danwanli/motion/ttc_flutter_app/build/umeng_verify_sdk/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:umeng_common_sdk] /Users/danwanli/motion/ttc_flutter_app/build/umeng_common_sdk/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:umeng_common_sdk] /Users/danwanli/motion/ttc_flutter_app/build/umeng_common_sdk/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] /Users/danwanli/motion/ttc_flutter_app/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] /Users/danwanli/motion/ttc_flutter_app/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] /Users/danwanli/motion/ttc_flutter_app/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] /Users/danwanli/motion/ttc_flutter_app/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:permission_handler_android] /Users/danwanli/motion/ttc_flutter_app/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:permission_handler_android] /Users/danwanli/motion/ttc_flutter_app/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:package_info_plus] /Users/danwanli/motion/ttc_flutter_app/build/package_info_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:package_info_plus] /Users/danwanli/motion/ttc_flutter_app/build/package_info_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:device_info_plus] /Users/danwanli/motion/ttc_flutter_app/build/device_info_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:device_info_plus] /Users/danwanli/motion/ttc_flutter_app/build/device_info_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:video_player_android] /Users/danwanli/motion/ttc_flutter_app/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:video_player_android] /Users/danwanli/motion/ttc_flutter_app/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_baidu_mapapi_base] /Users/danwanli/motion/ttc_flutter_app/build/flutter_baidu_mapapi_base/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_baidu_mapapi_base] /Users/danwanli/motion/ttc_flutter_app/build/flutter_baidu_mapapi_base/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [id.zelory:compressor:3.0.1] /Users/danwanli/.gradle/caches/transforms-3/42ead3b9a60cc6b9f640d47e37f8a82c/transformed/jetified-compressor-3.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [id.zelory:compressor:3.0.1] /Users/danwanli/.gradle/caches/transforms-3/42ead3b9a60cc6b9f640d47e37f8a82c/transformed/jetified-compressor-3.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/13f4ba9073ad3955f6b389f198634c22/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/13f4ba9073ad3955f6b389f198634c22/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/danwanli/.gradle/caches/transforms-3/1526dbedcb33d78eff6013e3a2aa5c68/transformed/jetified-appcompat-resources-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/danwanli/.gradle/caches/transforms-3/1526dbedcb33d78eff6013e3a2aa5c68/transformed/jetified-appcompat-resources-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/danwanli/.gradle/caches/transforms-3/dfad611ff7c07b0238bfb0182ee0b30c/transformed/appcompat-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/danwanli/.gradle/caches/transforms-3/dfad611ff7c07b0238bfb0182ee0b30c/transformed/appcompat-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/b0a43f0ed4ed5bb6ad1d5ad7065c61a9/transformed/lifecycle-extensions-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/b0a43f0ed4ed5bb6ad1d5ad7065c61a9/transformed/lifecycle-extensions-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/danwanli/.gradle/caches/transforms-3/b131a95b05b8346fb01bf5bb5aec70c5/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/danwanli/.gradle/caches/transforms-3/b131a95b05b8346fb01bf5bb5aec70c5/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.6.1] /Users/danwanli/.gradle/caches/transforms-3/152189b2bca9eb8edd777d186c3ac5ee/transformed/jetified-activity-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.6.1] /Users/danwanli/.gradle/caches/transforms-3/152189b2bca9eb8edd777d186c3ac5ee/transformed/jetified-activity-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/3c2489b1d3c3190e38e4e63a3feac70c/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/3c2489b1d3c3190e38e4e63a3feac70c/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/54441a6af38d4c89ebc5f25f8d309975/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/54441a6af38d4c89ebc5f25f8d309975/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/61b2895ea0e0bdf1d55fe0fb75e7e051/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/61b2895ea0e0bdf1d55fe0fb75e7e051/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/34b2119afea82154f0e1b0934dc13df8/transformed/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/34b2119afea82154f0e1b0934dc13df8/transformed/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.tencent.mm.opensdk:wechat-sdk-android:6.8.24] /Users/danwanli/.gradle/caches/transforms-3/b77aeac3dd193b1b49bacdc97e1446e3/transformed/jetified-wechat-sdk-android-6.8.24/AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.mm.opensdk:wechat-sdk-android:6.8.24] /Users/danwanli/.gradle/caches/transforms-3/b77aeac3dd193b1b49bacdc97e1446e3/transformed/jetified-wechat-sdk-android-6.8.24/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.webkit:webkit:1.5.0] /Users/danwanli/.gradle/caches/transforms-3/c7d6b54a3111bf14a015a99b85721a70/transformed/webkit-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.5.0] /Users/danwanli/.gradle/caches/transforms-3/c7d6b54a3111bf14a015a99b85721a70/transformed/webkit-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.4.0] /Users/danwanli/.gradle/caches/transforms-3/adb92caa0d12f7619eb88b0eb49497a5/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Users/danwanli/.gradle/caches/transforms-3/adb92caa0d12f7619eb88b0eb49497a5/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/99a19a6c5399da13388047e174ec5425/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/99a19a6c5399da13388047e174ec5425/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/d4971e5e16bb63600c13134ba9b700d4/transformed/jetified-exoplayer-hls-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/d4971e5e16bb63600c13134ba9b700d4/transformed/jetified-exoplayer-hls-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/7225ca52828514f8e56c4d630a10122f/transformed/jetified-exoplayer-dash-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/7225ca52828514f8e56c4d630a10122f/transformed/jetified-exoplayer-dash-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/5c22d4b3d495077c880201434892e349/transformed/jetified-exoplayer-smoothstreaming-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/5c22d4b3d495077c880201434892e349/transformed/jetified-exoplayer-smoothstreaming-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/f7ee3094868f6d81001ffdbe2e84cf51/transformed/jetified-exoplayer-core-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/f7ee3094868f6d81001ffdbe2e84cf51/transformed/jetified-exoplayer-core-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/danwanli/.gradle/caches/transforms-3/4bb222083c861b478b8313d22816b620/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/danwanli/.gradle/caches/transforms-3/4bb222083c861b478b8313d22816b620/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/da001e148deea070748f5f2b80518498/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/da001e148deea070748f5f2b80518498/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/fd6ad3c8f4a2d0316b5f18feb3518453/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/fd6ad3c8f4a2d0316b5f18feb3518453/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/a73d19872570227d5597908cf14977e9/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/a73d19872570227d5597908cf14977e9/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/e7d075a447fa84b72ece37849d711e83/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/e7d075a447fa84b72ece37849d711e83/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/c45e5f36ceae9a24d60aa90cef7be55d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/c45e5f36ceae9a24d60aa90cef7be55d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/4bd82f4790ad652d08b0c5a017de6dfd/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/4bd82f4790ad652d08b0c5a017de6dfd/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.8.0] /Users/danwanli/.gradle/caches/transforms-3/d8d02a069ae5008cf8447a10b6ed081f/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] /Users/danwanli/.gradle/caches/transforms-3/d8d02a069ae5008cf8447a10b6ed081f/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/danwanli/.gradle/caches/transforms-3/4fa1df9140677f57f625d25460264409/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/danwanli/.gradle/caches/transforms-3/4fa1df9140677f57f625d25460264409/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/7704bad0fd350c77c149fd543e5c3a2b/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/7704bad0fd350c77c149fd543e5c3a2b/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/danwanli/.gradle/caches/transforms-3/960244532fbc8c10054f178646dcb081/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/danwanli/.gradle/caches/transforms-3/960244532fbc8c10054f178646dcb081/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/4cde7e7e135356a22e20808e1431db79/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/4cde7e7e135356a22e20808e1431db79/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/dfd8b49368318e943e2c335e3f546e2c/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/dfd8b49368318e943e2c335e3f546e2c/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/fd53523d894e6ddcc769b9c4a6fac5a6/transformed/jetified-lifecycle-service-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/fd53523d894e6ddcc769b9c4a6fac5a6/transformed/jetified-lifecycle-service-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/62b292e08e2e622d0ce90496c3e2adea/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/62b292e08e2e622d0ce90496c3e2adea/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/a90b320de1f7d92bd45bd2f76b5d1f62/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/a90b320de1f7d92bd45bd2f76b5d1f62/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/ad7c2db389b1bf4b9bb9b8b7009cd1fd/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/ad7c2db389b1bf4b9bb9b8b7009cd1fd/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/1b188ed5081a6f7403d3650185b897c7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/1b188ed5081a6f7403d3650185b897c7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/95750590bbe558c90fe04fe1121ae967/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/danwanli/.gradle/caches/transforms-3/95750590bbe558c90fe04fe1121ae967/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/eaf4a47384fe739ec1158a90a19a1552/transformed/jetified-exoplayer-datasource-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/eaf4a47384fe739ec1158a90a19a1552/transformed/jetified-exoplayer-datasource-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/8c44903f846607336d994c3564aa10a4/transformed/jetified-exoplayer-extractor-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/8c44903f846607336d994c3564aa10a4/transformed/jetified-exoplayer-extractor-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-decoder:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/ae187b4b3d6bd78de2ff0a5b1a391e6a/transformed/jetified-exoplayer-decoder-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-decoder:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/ae187b4b3d6bd78de2ff0a5b1a391e6a/transformed/jetified-exoplayer-decoder-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-database:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/8800cc8114a5888442de929c27396eca/transformed/jetified-exoplayer-database-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-database:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/8800cc8114a5888442de929c27396eca/transformed/jetified-exoplayer-database-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/b1e07410d4905a9f28c4b2a01ba23141/transformed/jetified-exoplayer-common-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/b1e07410d4905a9f28c4b2a01ba23141/transformed/jetified-exoplayer-common-2.18.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/6566782e7f0935567a2184011731ffd7/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/danwanli/.gradle/caches/transforms-3/6566782e7f0935567a2184011731ffd7/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/07631916bcdbd05077f1836d38629454/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/danwanli/.gradle/caches/transforms-3/07631916bcdbd05077f1836d38629454/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/danwanli/.gradle/caches/transforms-3/3d6aef3fc693a451c807b15ada89238c/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/danwanli/.gradle/caches/transforms-3/3d6aef3fc693a451c807b15ada89238c/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:uverify-main:2.1.3.2] /Users/danwanli/.gradle/caches/transforms-3/a7d9138339c0492017a7e6da4fba060c/transformed/jetified-uverify-main-2.1.3.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:uverify-main:2.1.3.2] /Users/danwanli/.gradle/caches/transforms-3/a7d9138339c0492017a7e6da4fba060c/transformed/jetified-uverify-main-2.1.3.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:uverify-logger:2.1.3.2] /Users/danwanli/.gradle/caches/transforms-3/4a7da8210239e92cb30280660cdf0188/transformed/jetified-uverify-logger-2.1.3.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:uverify-logger:2.1.3.2] /Users/danwanli/.gradle/caches/transforms-3/4a7da8210239e92cb30280660cdf0188/transformed/jetified-uverify-logger-2.1.3.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:uverify-crashshield:2.1.3.2] /Users/danwanli/.gradle/caches/transforms-3/387b368472d67ab463855ad11f2c7537/transformed/jetified-uverify-crashshield-2.1.3.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:uverify-crashshield:2.1.3.2] /Users/danwanli/.gradle/caches/transforms-3/387b368472d67ab463855ad11f2c7537/transformed/jetified-uverify-crashshield-2.1.3.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:asms:1.4.1] /Users/danwanli/.gradle/caches/transforms-3/bd2b984cd3e26b89a5b1c0f7f8402ca0/transformed/jetified-asms-1.4.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:asms:1.4.1] /Users/danwanli/.gradle/caches/transforms-3/bd2b984cd3e26b89a5b1c0f7f8402ca0/transformed/jetified-asms-1.4.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Location_All:9.4.0] /Users/danwanli/.gradle/caches/transforms-3/25b45ee61d6731e1f9b8a21763a7c503/transformed/jetified-BaiduMapSDK_Location_All-9.4.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Location_All:9.4.0] /Users/danwanli/.gradle/caches/transforms-3/25b45ee61d6731e1f9b8a21763a7c503/transformed/jetified-BaiduMapSDK_Location_All-9.4.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Map:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/9099e47f8e8de7ea10666b09b07fb88d/transformed/jetified-BaiduMapSDK_Map-7.5.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Map:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/9099e47f8e8de7ea10666b09b07fb88d/transformed/jetified-BaiduMapSDK_Map-7.5.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Search:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/23cc6fce5b1fdcdd3d17226cfeb73f67/transformed/jetified-BaiduMapSDK_Search-7.5.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Search:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/23cc6fce5b1fdcdd3d17226cfeb73f67/transformed/jetified-BaiduMapSDK_Search-7.5.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Util:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/c6dea9748d390ae3a0102ffcee4a98a7/transformed/jetified-BaiduMapSDK_Util-7.5.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.baidu.lbsyun:BaiduMapSDK_Util:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/c6dea9748d390ae3a0102ffcee4a98a7/transformed/jetified-BaiduMapSDK_Util-7.5.5/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/8e85f8df9ffbe96059118124eac9be7a/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/danwanli/.gradle/caches/transforms-3/8e85f8df9ffbe96059118124eac9be7a/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.baidu.lbsyun:base:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/d1b6c387231a762ded297f696f852927/transformed/jetified-base-7.5.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.baidu.lbsyun:base:7.5.5] /Users/danwanli/.gradle/caches/transforms-3/d1b6c387231a762ded297f696f852927/transformed/jetified-base-7.5.5/AndroidManifest.xml:7:5-9:41
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml
+INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml:7:5-66
+MERGED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:23:5-67
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:23:5-67
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:11:5-67
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml:7:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-79
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:15:5-79
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:15:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/f7ee3094868f6d81001ffdbe2e84cf51/transformed/jetified-exoplayer-core-2.18.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/f7ee3094868f6d81001ffdbe2e84cf51/transformed/jetified-exoplayer-core-2.18.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/b1e07410d4905a9f28c4b2a01ba23141/transformed/jetified-exoplayer-common-2.18.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.1] /Users/danwanli/.gradle/caches/transforms-3/b1e07410d4905a9f28c4b2a01ba23141/transformed/jetified-exoplayer-common-2.18.1/AndroidManifest.xml:24:5-79
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:15:5-79
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:15:5-79
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-76
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-76
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-76
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:13:5-76
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:13:5-76
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-73
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-81
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:21:5-81
+MERGED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:21:5-81
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:12:22-78
+queries
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:15:5-17:15
+MERGED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:15
+MERGED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:15
+MERGED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-13:15
+MERGED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-13:15
+package#com.tencent.mm
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-50
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:16:18-47
+activity#com.jarvan.fluwx.wxapi.FluwxWXEntryActivity
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:20:9-25:58
+	android:launchMode
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-44
+	android:exported
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-37
+	android:theme
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-55
+	android:taskAffinity
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-52
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-71
+activity-alias#${applicationId}.wxapi.WXPayEntryActivity
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:27:9-32:58
+	android:launchMode
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-48
+	android:exported
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-36
+	android:targetActivity
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-81
+	android:theme
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-55
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-69
+activity-alias#com.tntlinking.tntdev.wxapi.WXPayEntryActivity
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:27:9-32:58
+	android:launchMode
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-48
+	android:exported
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-36
+	android:targetActivity
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-81
+	android:theme
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-55
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-69
+activity-alias#${applicationId}.wxapi.WXEntryActivity
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:33:9-39:58
+	android:launchMode
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-43
+	android:exported
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-36
+	android:targetActivity
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-81
+	android:theme
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-55
+	android:taskAffinity
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-52
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:34:13-66
+activity-alias#com.tntlinking.tntdev.wxapi.WXEntryActivity
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:33:9-39:58
+	android:launchMode
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-43
+	android:exported
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-36
+	android:targetActivity
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-81
+	android:theme
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-55
+	android:taskAffinity
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-52
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:34:13-66
+provider#com.jarvan.fluwx.FluwxFileProvider
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:41:9-49:20
+	android:grantUriPermissions
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:45:13-47
+	android:authorities
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:43:13-65
+	android:exported
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-37
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:46:13-48:69
+	android:resource
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:48:17-66
+	android:name
+		ADDED from [:fluwx] /Users/danwanli/motion/ttc_flutter_app/build/fluwx/intermediates/merged_manifest/debug/AndroidManifest.xml:47:17-67
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from /Users/danwanli/motion/ttc_flutter_app/android/app/src/debug/AndroidManifest.xml:1:1-8:12 reason: com.jarvan.fluwx requested WRITE_EXTERNAL_STORAGE
+MERGED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-80
+MERGED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-80
+intent#action:name:android.intent.action.GET_CONTENT+data:mimeType:*/*
+ADDED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:18
+action#android.intent.action.GET_CONTENT
+ADDED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-72
+	android:name
+		ADDED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:21-69
+data
+ADDED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
+	android:mimeType
+		ADDED from [:file_picker] /Users/danwanli/motion/ttc_flutter_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
+provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
+ADDED from [:image_picker_android] /Users/danwanli/motion/ttc_flutter_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:image_picker_android] /Users/danwanli/motion/ttc_flutter_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:image_picker_android] /Users/danwanli/motion/ttc_flutter_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-74
+	android:exported
+		ADDED from [:image_picker_android] /Users/danwanli/motion/ttc_flutter_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:image_picker_android] /Users/danwanli/motion/ttc_flutter_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-82
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] /Users/danwanli/motion/ttc_flutter_app/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-13:74
+	android:exported
+		ADDED from [:url_launcher_android] /Users/danwanli/motion/ttc_flutter_app/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+	android:theme
+		ADDED from [:url_launcher_android] /Users/danwanli/motion/ttc_flutter_app/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-71
+	android:name
+		ADDED from [:url_launcher_android] /Users/danwanli/motion/ttc_flutter_app/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-74
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:17:5-76
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:19:5-76
+MERGED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:19:5-76
+	android:name
+		ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:17:22-73
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:19:5-75
+	android:name
+		ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:19:22-72
+uses-permission#com.android.launcher.permission.READ_SETTINGS
+ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:26:5-85
+	android:name
+		ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:26:22-82
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:28:5-68
+	android:name
+		ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:28:22-65
+service#com.baidu.location.f
+ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:33:9-36:41
+	android:process
+		ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-38
+	android:enabled
+		ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-35
+	android:name
+		ADDED from [:flutter_bmflocation] /Users/danwanli/motion/ttc_flutter_app/build/flutter_bmflocation/intermediates/merged_manifest/debug/AndroidManifest.xml:34:13-48
+intent#action:name:android.support.customtabs.action.CustomTabsService
+ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:18
+action#android.support.customtabs.action.CustomTabsService
+ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-90
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:11:21-87
+activity#com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserActivity
+ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-20:47
+	android:exported
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-36
+	android:configChanges
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-137
+	android:theme
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-44
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-104
+activity#com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ChromeCustomTabsActivity
+ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:21:9-24:55
+	android:exported
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-36
+	android:theme
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-52
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-112
+activity#com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.TrustedWebActivity
+ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-28:55
+	android:exported
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-36
+	android:theme
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-52
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-106
+activity#com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ChromeCustomTabsActivitySingleInstance
+ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:29:9-33:55
+	android:launchMode
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-48
+	android:exported
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-36
+	android:theme
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:33:13-52
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-126
+activity#com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.TrustedWebActivitySingleInstance
+ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-38:55
+	android:launchMode
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-48
+	android:exported
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-36
+	android:theme
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-52
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-120
+receiver#com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ActionBroadcastReceiver
+ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:40:9-43:40
+	android:enabled
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-35
+	android:exported
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:43:13-37
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-111
+meta-data#io.flutter.embedded_views_preview
+ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:45:9-47:36
+	android:value
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:47:13-33
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/danwanli/motion/ttc_flutter_app/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml:46:13-61
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/danwanli/.gradle/caches/transforms-3/66cf4e3ddef4fa70527a905bbea4ea8e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/danwanli/.gradle/caches/transforms-3/960244532fbc8c10054f178646dcb081/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/danwanli/.gradle/caches/transforms-3/960244532fbc8c10054f178646dcb081/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/4cde7e7e135356a22e20808e1431db79/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/danwanli/.gradle/caches/transforms-3/4cde7e7e135356a22e20808e1431db79/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/danwanli/.gradle/caches/transforms-3/7e231e948a2beb30d04b20acdb519b92/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/danwanli/.gradle/caches/transforms-3/960244532fbc8c10054f178646dcb081/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/danwanli/.gradle/caches/transforms-3/960244532fbc8c10054f178646dcb081/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/danwanli/.gradle/caches/transforms-3/960244532fbc8c10054f178646dcb081/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:17:5-79
+	android:name
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:17:22-76
+activity#com.mobile.auth.gatewayauth.LoginAuthActivity
+ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:31:9-37:62
+	android:screenOrientation
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:36:13-47
+	android:launchMode
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:35:13-43
+	android:exported
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:34:13-37
+	android:configChanges
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:33:13-74
+	android:theme
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:37:13-59
+	android:name
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:32:13-73
+activity#com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity
+ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:38:9-43:50
+	android:screenOrientation
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:43:13-47
+	android:launchMode
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:42:13-43
+	android:exported
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:41:13-37
+	android:configChanges
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:40:13-74
+	android:name
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:39:13-84
+activity#com.cmic.sso.sdk.activity.LoginAuthActivity
+ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:44:9-50:62
+	android:screenOrientation
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:49:13-47
+	android:launchMode
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:48:13-43
+	android:exported
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:47:13-37
+	android:configChanges
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:46:13-74
+	android:theme
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:50:13-59
+	android:name
+		ADDED from [com.umeng.umsdk:uverify:2.5.5] /Users/danwanli/.gradle/caches/transforms-3/100ee084b7809269b750ff13ca36be47/transformed/jetified-uverify-2.5.5/AndroidManifest.xml:45:13-71

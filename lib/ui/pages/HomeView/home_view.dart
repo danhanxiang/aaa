@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:people_living_flutterdemo/ProjectConfig/m_colors.dart';
+import 'package:people_living_flutterdemo/ui/pages/HomeView/home_CheckRole.dart';
 import 'package:people_living_flutterdemo/ui/pages/HomeView/home_positionDetailView.dart';
 import 'package:people_living_flutterdemo/core/service/home_api/home_api.dart';
 import 'package:people_living_flutterdemo/ProjectConfig/user_manager.dart';
@@ -19,18 +21,21 @@ class homeView extends StatefulWidget {
 class _homeViewState extends State<homeView> with TickerProviderStateMixin {
   List _dataPositionListArray = [];
   bool isOrder = true;
+  late EasyRefreshController _controller;
 
-  List _spList = ['职位推荐', '活动任务'];
+  // List _spList = ['职位推荐', '活动任务'];
+  List _spList = ['职位推荐'];
   late TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-
+    _controller = EasyRefreshController();
     getPositionList();
 
     isOrder = User.userInfo.serviceStatus == 1 ? true : false;
-    _spList = isOrder ? ['职位推荐', '活动任务'] : ['活动任务'];
+    // _spList = isOrder ? ['职位推荐', '活动任务'] : ['活动任务'];
+    _spList = ['职位推荐'];
     _tabController =
         TabController(initialIndex: 0, length: _spList.length, vsync: this);
   }
@@ -47,89 +52,98 @@ class _homeViewState extends State<homeView> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        actions: [
-          ElevatedButton(
-              style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(0),
-                  backgroundColor: MaterialStateProperty.all(Colors.white)),
-              onPressed: () {
-                _showDialog(context);
-              },
-              child: createRightBtn()),
-        ],
-        elevation: 0, //去除阴影
-        leadingWidth: 400,
-        leading: CreateLeftBtn(),
-      ),
-      body: NestedScrollView(
-        physics: NeverScrollableScrollPhysics(),
-        headerSliverBuilder: (context, isScroller) {
-          return [
-            const SliverAppBar(
-              flexibleSpace: homeScrollView(),
-              collapsedHeight: 470,
-              backgroundColor: Colors.white,
-              //   expandedHeight: 550,
-            ),
-            SliverPersistentHeader(
-              delegate: MyDelegate(TabBar(
-                controller: _tabController,
-                tabs: _spList.map((e) {
-                  return Tab(
-                    child: Container(
-                      child: new Text(e),
-                    ),
-                  );
-                }).toList(),
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          actions: [
+            ElevatedButton(
+                style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(0),
+                    backgroundColor: MaterialStateProperty.all(Colors.white)),
+                onPressed: () {
+                  // _showDialog(context);
 
-                isScrollable: true, //设置可以滑动
-                indicatorColor: Colors.transparent, //指示器颜色设置透明
-                //indicatorSize: TabBarIndicatorSize.label, //指示器长度
-                labelColor: m_colors.title_01_color, //选中颜色
-                labelStyle:
-                    TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                unselectedLabelColor: m_colors.content_02_color, //未选中颜色
-                unselectedLabelStyle: TextStyle(fontSize: 15),
-                labelPadding: EdgeInsets.only(left: 16), //文字间距
-
-                onTap: (index) {
-                  print(index);
-                  print(context.size!.height);
+                  Navigator.of(context).pushNamed(CheckRoleView.routeName);
                 },
-              )),
-              floating: true,
-              pinned: true,
+                child: checkRoleBtn(),
+                // createRightBtn()
             ),
-          ];
-        },
-        body: TabBarView(
-          controller: _tabController,
-          children: _spList.map((e) {
-            if (e == '职位推荐') {
-              return PositionViewList();
-            } else if (e == '活动任务') {
-              return Container(
-                color: Colors.white,
-                child: Center(
-                  child: Text("我是活动任务界面"),
-                ),
-              );
-            }
-            return Text('');
-          }).toList(),
+          ],
+          elevation: 0,
+          //去除阴影
+          leadingWidth: 400,
+          leading: CreateLeftBtn(),
         ),
-      ),
-    );
+        body: contentWidget()
+
+        // NestedScrollView(
+        //   physics: NeverScrollableScrollPhysics(),
+        //   headerSliverBuilder: (context, isScroller) {
+        //     return [
+        //       const SliverAppBar(
+        //         flexibleSpace: homeScrollView(),
+        //         collapsedHeight: 200,
+        //         backgroundColor: Colors.white,
+        //         //   expandedHeight: 550,
+        //       ),
+        //       SliverPersistentHeader(
+        //         delegate: MyDelegate(TabBar(
+        //           controller: _tabController,
+        //           tabs: _spList.map((e) {
+        //             return Tab(
+        //               child: Container(
+        //                 child: new Text(e),
+        //               ),
+        //             );
+        //           }).toList(),
+        //
+        //           isScrollable: true, //设置可以滑动
+        //           indicatorColor: Colors.transparent, //指示器颜色设置透明
+        //           //indicatorSize: TabBarIndicatorSize.label, //指示器长度
+        //           labelColor: m_colors.title_01_color, //选中颜色
+        //           labelStyle:
+        //               TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+        //           unselectedLabelColor: m_colors.content_02_color, //未选中颜色
+        //           unselectedLabelStyle: TextStyle(fontSize: 15),
+        //           labelPadding: EdgeInsets.only(left: 16), //文字间距
+        //
+        //           onTap: (index) {
+        //             print(index);
+        //             print(context.size!.height);
+        //           },
+        //         )),
+        //         floating: true,
+        //         pinned: true,
+        //       ),
+        //     ];
+        //   },
+        //   body: TabBarView(
+        //     controller: _tabController,
+        //     children: _spList.map((e) {
+        //       if (e == '职位推荐') {
+        //         return PositionViewList();
+        //       } else if (e == '活动任务') {
+        //         return Container(
+        //           color: Colors.white,
+        //           child: Center(
+        //             child: Text("我是活动任务界面"),
+        //           ),
+        //         );
+        //       }
+        //       return Text('');
+        //     }).toList(),
+        //   ),
+        // ),
+        );
   }
 
   Widget PositionViewList() {
-    if (User.userInfo.status == 3) {
+    if (true) {
       if (_dataPositionListArray.length > 0) {
         return Container(
           color: Colors.white,
           child: ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               itemCount: _dataPositionListArray.length,
               itemBuilder: ((context, index) {
                 return GestureDetector(
@@ -139,7 +153,8 @@ class _homeViewState extends State<homeView> with TickerProviderStateMixin {
                     Home_positionListModel model =
                         _dataPositionListArray[index];
 
-                    Navigator.of(context).pushNamed(PositionDetailView.routeName,
+                    Navigator.of(context).pushNamed(
+                        PositionDetailView.routeName,
                         arguments: model.positionId.toString());
                   },
                 );
@@ -246,7 +261,8 @@ class _homeViewState extends State<homeView> with TickerProviderStateMixin {
               border: Border.all(
                   width: 1,
                   color:
-                      isOrder ? m_colors.backColor : m_colors.content_01_color),
+                      isOrder ? m_colors.backColor : m_colors.content_01_color
+              ),
             ),
             child: Row(
               children: [
@@ -278,6 +294,44 @@ class _homeViewState extends State<homeView> with TickerProviderStateMixin {
     );
   }
 
+  Widget checkRoleBtn() {
+    return Container(
+      padding: EdgeInsets.fromLTRB(0, 0, 2, 0),
+      child: Row(children: [
+        Container(
+            decoration: BoxDecoration(
+              //设置四周圆角 角度
+              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+              //设置四周边框
+              border: Border.all(
+                  width: 1,
+                  color:m_colors.backColor),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(6),
+                  child:const Text(
+                   '切换角色',
+                    style: TextStyle(
+                        color: m_colors.backColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.fromLTRB(0, 0, 6, 0),
+                  child: Image.asset( 'images/home/icon_home_noorderstart.png',
+                    width: 14,
+                    height: 10,
+                  ),
+                )
+              ],
+            ))
+      ]),
+    );
+  }
+
   void _showDialog(BuildContext Wcontect) {
     showCupertinoDialog(
         context: Wcontect,
@@ -297,7 +351,7 @@ class _homeViewState extends State<homeView> with TickerProviderStateMixin {
                   onPressed: () {
                     UpdateServiceStatus(isOrder ? "2" : "1", () {
                       //更新本地用户信息
-                      LoginService.GetUserInfo((object) => null);
+                      LoginService.GetDevUserInfo((object) => null);
                       setState(() {
                         if (isOrder) {
                           _spList = ['活动任务'];
@@ -321,16 +375,61 @@ class _homeViewState extends State<homeView> with TickerProviderStateMixin {
         });
   }
 
+
+  //首页 内容组件
+  Widget contentWidget() {
+    return EasyRefresh(
+      controller: _controller,
+      onRefresh: () async {
+        await Future.delayed(const Duration(seconds: 0), () {
+          // 结束加载
+          getPositionList();
+        });
+      },
+      enableControlFinishRefresh: true,
+      enableControlFinishLoad: false,
+      header:
+      ClassicalHeader(textColor: Colors.black,
+          showInfo: false,
+          refreshText: '正在加载中...',
+          refreshReadyText:'正在加载中...',
+          refreshingText: "正在加载中...",
+          refreshedText: '加载完成'),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const TopTitleView(),
+            Container(
+                padding:const EdgeInsets.only(left: 16, top: 16),
+                alignment: Alignment.centerLeft,
+                child: const Text(
+                  '推荐职位',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600),
+                )),
+            PositionViewList(),
+          ],
+        ),
+      ),
+    );
+  }
+
   //获取首页职位推荐列表
   void getPositionList() {
     HomeService.getPositionList((object) {
       if (object.isSuccess) {
         setState(() {
-          _dataPositionListArray = object.data;
+          if(object.data.isNotEmpty){
+            _dataPositionListArray = object.data;
+          }
         });
       } else {
         EasyLoading.showToast(object.message ?? '请求错误！');
+
       }
+      _controller.finishRefresh();
     });
   }
 }
@@ -340,14 +439,17 @@ class homeScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HeaderView();
+    // return HeaderView();
+    return TopTitleView();
   }
 }
 
 class MyDelegate extends SliverPersistentHeaderDelegate {
   MyDelegate(this.tabBar, {this.color = Colors.white});
+
   TabBar tabBar;
   Color color;
+
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {

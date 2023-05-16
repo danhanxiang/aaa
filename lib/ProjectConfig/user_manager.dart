@@ -4,11 +4,26 @@ import 'dart:developer';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter/material.dart';
-
 import 'package:people_living_flutterdemo/core/components/custom_animation.dart';
-
 import '../core/models/index.dart';
-//import 'package:firebase_core/firebase_core.dart';
+
+
+/// 本地key: 身份切换 0 开发者端 1企业端
+String IdentityKey = 'isIdentity';
+/// 本地token
+String TokenKey = 'token';
+/// 用户开发者端信息
+String DeveloperInfoKey = 'login_DevUserInfo';
+/// 企业端用户信息
+String CompanyInfoKey = 'login_CompanyUserInfo';
+
+String IsloginKey = 'islogin';
+/// 省市区
+String ProvinceKey = 'province';
+/// 更新token
+String LoginRoleKey = 'loginRole';
+
+String Home_searchKey = 'home_search';
 
 class User {
   static late SharedPreferences _prefs;
@@ -16,6 +31,12 @@ class User {
 
   static String token = '';
   static var isLogin;
+  static String loginRole = 'Recruiter';
+  /// 第一次进来显示
+  static bool isFirst = true;
+
+  /// 0 开发端 1 企业端 默认开发者端
+  static int identity = 0;
 
   //区域数据
   static List<Province> provinceList = [];
@@ -28,19 +49,27 @@ class User {
 
     _prefs = await SharedPreferences.getInstance();
 
-    var _profile = _prefs.getString("login_userInfo");
-    bool? _islogin = _prefs.getBool('islogin');
-    String? _token = _prefs.getString('token');
-    var _provinceList = _prefs.getStringList("province");
+    /// 获取身份切换
+    identity = _prefs.getInt(IdentityKey) ?? 0;
+    
+    String? _loginRole = _prefs.getString(LoginRoleKey);
+    if (_loginRole != null) {
+      loginRole = _loginRole;
+    }
 
+    bool? _islogin = _prefs.getBool(IsloginKey);
     if (_islogin != null) {
       isLogin = _islogin;
     }
-    //
+    
+
+    String? _token = _prefs.getString(TokenKey);
     if (_token != null) {
       token = _token;
     }
 
+    /// 用户信息
+    var _profile = _prefs.getString(DeveloperInfoKey);
     if (_profile != null) {
       try {
         userInfo = Login_userInfo.fromJson(jsonDecode(_profile));
@@ -49,6 +78,9 @@ class User {
       }
     } else {}
 
+
+    /// 省市区
+    var _provinceList = _prefs.getStringList(ProvinceKey);
     if (_provinceList != null) {
       try {
         List<Province> Provinces = [];
@@ -63,30 +95,76 @@ class User {
     }
   }
 
-  // 存储用户信息
+  static String identityToTitle(){
+    switch (identity) {
+      case 0:
+        return '开发者端';
+      case 1:
+       return '企业端';
+      default: return '';
+    } 
+  }
+
+  static String statusTitle(){
+    if (User.userInfo.status == 1) {
+      return "待完善";
+    } else if (User.userInfo.status == 2) {
+      return "待审核";
+    } else if (User.userInfo.status == 3) {
+      return "审核成功";
+    } else if (User.userInfo.status == 4) {
+      return "审核失败";
+    } else {
+      return "未知";
+    }
+  }
+
+  /// 存储身份 0 企业端 1 开发者端
+  static saveChangeStyle(int stlye){
+    _prefs.setInt(IdentityKey, stlye);
+    identity = stlye;
+  }
+
+  // 存储开发者用户信息
   static saveUserInfo(Login_userInfo value) {
-    _prefs.setString("login_userInfo", jsonEncode(value.toJson()));
+    _prefs.setString(DeveloperInfoKey, jsonEncode(value.toJson()));
 
     //更新信息
-    var _profile = _prefs.getString("login_userInfo")!;
+    var _profile = _prefs.getString(DeveloperInfoKey)!;
+    userInfo = Login_userInfo.fromJson(jsonDecode(_profile));
+  }
+
+  /// 存储企业端用户信息
+  static saveCompUserInf(Login_userCompInfo value) {
+    _prefs.setString(CompanyInfoKey, jsonEncode(value.toJson()));
+    //更新信息
+    var _profile = _prefs.getString(CompanyInfoKey)!;
     userInfo = Login_userInfo.fromJson(jsonDecode(_profile));
   }
 
   // 保存登录状态
   static saveIsLogin(bool value) {
-    _prefs.setBool('islogin', value);
+    _prefs.setBool(IsloginKey, value);
 
     //更新信息
-    isLogin = _prefs.getBool('islogin')!;
+    isLogin = _prefs.getBool(IsloginKey) ?? false;
   }
 
   // 保存token
   static saveIsToken(String value) {
-    _prefs.setString('token', value);
+    _prefs.setString(TokenKey, value);
 
     //更新token
-    token = _prefs.getString('token')!;
+    token = _prefs.getString(TokenKey) ?? '';
   }
+  // 保存token
+  static saveRole(String value) {
+    _prefs.setString(LoginRoleKey, value);
+
+    //更新token
+    loginRole = _prefs.getString(LoginRoleKey)??'';
+  }
+
 
 // 存储地区信息
   static saveProvince(List<Province> ProvincesList) {
@@ -94,17 +172,35 @@ class User {
     for (var e in ProvincesList) {
       provinceJson.add(jsonEncode(e.toJson()));
     }
-    _prefs.setStringList("province", provinceJson);
+    _prefs.setStringList(ProvinceKey, provinceJson);
 
     List<Province> NewProvinces = [];
     //更新信息
-    var _provinceLists = _prefs.getStringList("province");
+    var _provinceLists = _prefs.getStringList(ProvinceKey);
     if (_provinceLists != null) {
       for (var e in _provinceLists) {
         NewProvinces.add(Province.fromJson(jsonDecode(e)));
       }
 
       provinceList = NewProvinces;
+    }
+  }
+
+  static saveDevSearch(String search) {
+    var list = _prefs.getStringList(Home_searchKey);
+    if (list != null) {
+      list.add(search);
+      list.reversed.toList();
+      _prefs.setStringList(Home_searchKey, list);
+    }
+  }
+
+  static List<String> getDecSearch() {
+    var stringList = _prefs.getStringList(Home_searchKey);
+    if (stringList != null) {
+      return stringList;
+    } else {
+      return [];
     }
   }
 
@@ -133,12 +229,12 @@ class User {
 class user_manager {
   //存储用户信息
   static saveUserInfo(Login_userInfo value) {
-    saveObject('login_userInfo', value);
+    saveObject(DeveloperInfoKey, value);
   }
 
   //获取用户信息  Login_userInfo
   static Future<Login_userInfo> getUserInfo() async {
-    Login_userInfo newmodel = await user_manager.getObject('login_userInfo');
+    Login_userInfo newmodel = await user_manager.getObject(DeveloperInfoKey);
     return newmodel;
   }
 

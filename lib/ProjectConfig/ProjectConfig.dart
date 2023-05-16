@@ -3,7 +3,7 @@ class ProjectConfig {
   static bool isDev = true; //环境api配置  测试true  生产flase
   static String DevApi = 'https://staging.tntlinking.com'; //测试环境
   static String ProdApi = 'https://talent.tntlinking.com'; //生产环境
-  
+
   static String G_URl =
       isDev ? DevApi + "/api/new_gateway" : ProdApi + "/api/new_gateway";
 
@@ -22,31 +22,66 @@ class ProjectConfig {
 
 //微信APPID
   static String WXAppID = 'wx1e91399d09c1cd9a';
+// 小程序username
+  static String WXUserName = 'gh_3d9e6fe5d03c';
+  
+  
+
+  static String AGREEMENT_URL_DEBUG =
+      "https://talent-business.staging.tntlinking.com/#/page/article?pageCode=02d1a173715748a9bd74cfffe5600374";
+  static String AGREEMENT_URL_RELEASE =
+      "https://talent-business.tntlinking.com/#/page/article?pageCode=04858774a247409a997e5e822daf2d25";
+
+  static String PRIVATE_URL_DEBUG =
+      "https://talent-business.staging.tntlinking.com/#/page/article?pageCode=049afbccd6e64a76951a1b204031801b";
+  static String PRIVATE_URL_RELEASE =
+      "https://talent-business.tntlinking.com/#/page/article?pageCode=5f537d5726744c0ab632f8379eeae3e5";
+
 //隐私政策
-  static String YSZC =
-      "https://talent-business.stage-ttchain.tntlinking.com/#/page/article?pageCode=049afbccd6e64a76951a1b204031801b";
+  static String YSZC = isDev ? PRIVATE_URL_DEBUG : PRIVATE_URL_RELEASE;
+
 // 用户协议
-  static String YHXY =
-      "https://talent-business.stage-ttchain.tntlinking.com/#/page/article?pageCode=02d1a173715748a9bd74cfffe5600374";
+  static String YHXY = isDev ? AGREEMENT_URL_DEBUG : AGREEMENT_URL_RELEASE;
 
   static String api = "https://talent-business.tntlinking.com";
+
+   /// 合作模式，服务手册，常见问题，拍照技巧，活动规则的相关测试地址和正式地址配置
+   static String OTHER_SERVICE_URL = isDev ? "https://minio.stage-ttchain.tntlinking.com" : "https://s3.ttchain.tntlinking.com";
+
   // 服务手册
-  static String FWSC =
-      "${api}/#/page/article?pageCode=89890f4dfcb34a37aff65de3166fdac1";
+  static String FWSC = "${OTHER_SERVICE_URL}/manpower-pages/service_guide.md";
 
   /// 常见问题
   static String CJWT =
-      "${api}/#/page/article?pageCode=9f8ef8b48d124395a475e29fd09a7ac0";
+      "${OTHER_SERVICE_URL}/manpower-pages/faq_guide.md";
 
   /// 合作模式
   static String HZMS =
-      "${api}/#/page/article?pageCode=ec773f224f2b41069d844af9178bcc1b";
+      "${OTHER_SERVICE_URL}/manpower-pages/recruit_guide.pdf";
 
   /// 拍照技巧
   static String PicMD =
-      "${api}/#/page/article?pageCode=62a410151649428791cdbf2a75bbe56c";
+      "${OTHER_SERVICE_URL}/manpower-pages/photography.md";
 
   /// 活动规则
   static String HDGZ =
-      "${api}/#/page/article?pageCode=0501dc5abf964f8eb1c31ee6ba4281cf";
+      "${OTHER_SERVICE_URL}/manpower-pages/recommend_guide.mdf";
+
+  /// 微信分享开职位详情
+  static String positionDetailShareUrl(num developerId) {
+    if (isDev) {
+      return 'https://wechat.staging.tntlinking.com/#/pages/jobDetail/index?positionId=$developerId&share=true';
+    } else {
+      return 'https://wechats.tntlinking.com/#/pages/jobDetail/index?positionId=$developerId&share=true';
+    }
+  }
+
+  /// 微信分享开发者详情
+  static String developerDetailShareUrl(num developerId) {
+    if (isDev) {
+      return 'http://talent.staging.tntlinking.com/#/developer-details?developerId=$developerId';
+    } else {
+      return 'https://talent.tntlinking.com/#/developer-details?developerId=$developerId';
+    }
+  }
 }

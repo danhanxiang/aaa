@@ -144,23 +144,21 @@ Widget positionItemListWidget(BuildContext context, Position_item data) {
     },
     child: Container(
       decoration:
-          const BoxDecoration(color: Colors.white, boxShadow: <BoxShadow>[
-        BoxShadow(
-          color: Colors.blueGrey,
-        )
+          const BoxDecoration(
+            color: Colors.white, 
+            boxShadow: <BoxShadow>[
+              BoxShadow(color: Colors.blueGrey)
       ]),
       margin: EdgeInsets.only(top: 10, left: 16, right: 16),
       padding: EdgeInsets.only(left: 16, right: 16, bottom: 8),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-              child: ClipRRect(
-                child: Image.network(data.avatarUrl ?? ''),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
-              ),
+          Container(
+            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+            child: ClipRRect(
+              child: Image.network(data.avatarUrl ?? ''),
+              borderRadius: BorderRadius.all(Radius.circular(8)),
             ),
           ),
           SizedBox(

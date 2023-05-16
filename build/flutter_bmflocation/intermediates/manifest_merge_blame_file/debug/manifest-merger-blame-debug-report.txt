@@ -1,0 +1,66 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.baidu.flutter_bmflocation" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="19"
+6-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml
+7        android:targetSdkVersion="19" />
+7-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml
+8    <!-- 这个权限用于进行网络定位 -->
+9    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+9-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:4:5-97
+9-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:4:22-78
+10    <!-- 这个权限用于访问GPS定位 -->
+11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+11-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:6:5-95
+11-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:6:22-76
+12    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:8:5-92
+13-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:8:22-73
+14    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:10:5-95
+15-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:10:22-76
+16    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+17    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+17-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:12:5-92
+17-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:12:22-73
+18    <!-- 用于读取手机当前的状态 -->
+19    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+19-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:14:5-91
+19-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:14:22-72
+20    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+21    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+21-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:16:5-97
+21-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:16:22-78
+22    <!-- 访问网络，网络定位需要上网 -->
+23    <uses-permission android:name="android.permission.INTERNET" />
+23-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:18:5-67
+23-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:18:22-64
+24
+25    <!-- 读取系统信息，包含系统版本等信息，用作统计 -->
+26    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+26-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:21:5-85
+26-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:21:22-82
+27    <!-- 程序在手机屏幕关闭后后台进程仍然运行 -->
+28    <uses-permission android:name="android.permission.WAKE_LOCK" />
+28-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:23:5-68
+28-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:23:22-65
+29
+30    <application>
+30-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:24:5-30:19
+31
+32        <!-- 声明service组件 -->
+33        <service
+33-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:26:9-29:49
+34            android:name="com.baidu.location.f"
+34-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:27:13-48
+35            android:enabled="true"
+35-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:28:13-35
+36            android:process=":remote" />
+36-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/flutter_bmflocation-3.3.1/android/src/main/AndroidManifest.xml:29:13-38
+37    </application>
+38
+39</manifest>

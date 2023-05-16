@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:people_living_flutterdemo/ProjectConfig/m_colors.dart';
 import 'package:people_living_flutterdemo/ProjectConfig/tools.dart';
 import 'package:people_living_flutterdemo/core/components/m_AppBar.dart';
 import 'package:people_living_flutterdemo/core/components/m_mainButton.dart';
-import 'package:people_living_flutterdemo/ui/pages/PersonalView/myResume.dart';
+import 'package:people_living_flutterdemo/core/extension/int_extension.dart';
+import 'package:people_living_flutterdemo/core/extension/string_extension.dart';
 import 'package:people_living_flutterdemo/ui/pages/PersonalView/person_updateUserInfo/personal_ImportResume.dart';
 import 'package:people_living_flutterdemo/ui/pages/PersonalView/person_updateUserInfo/personal_add_education.dart';
 import 'package:people_living_flutterdemo/ui/pages/PersonalView/person_updateUserInfo/personal_add_professional.dart';
@@ -28,22 +30,19 @@ class CretaeUserInfoView extends StatefulWidget {
 
 class _CretaeUserInfoViewState extends State<CretaeUserInfoView> {
   Person_inUuserData? userDataModel;
-  bool _isShowBottomView = false;
-  double _isLastPixels = 0.0;
+
+  final picker = ImagePicker();
+  XFile? _imageFile;
+  List<XFile>? _imageFiles;
+
+
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    
-    //获取入驻资料
-    print("获取城市列表");
-    getInuserInfodata((data) {
-      setState(() {
-        print("获取入驻资料");
-        userDataModel = data;
-      });
-    });
+    /// 入驻接口
+    isRefresh();
 
     //获取城市列表
     PersonalService.postCityList((object) {
@@ -54,172 +53,53 @@ class _CretaeUserInfoViewState extends State<CretaeUserInfoView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: m_AppBar(context, "入驻资料"),
-        backgroundColor: Colors.white,
-        body: NotificationListener(
-            onNotification: (ScrollNotification notification) {
-              bool isShow = false;
-              if (notification is ScrollStartNotification) {
-                print("开始滚动");
-              } else if (notification is ScrollUpdateNotification) {
-                double current = notification.metrics.pixels;
-                print("$current");
-                if (current > _isLastPixels) {
-                  isShow = true;
-                  print("上滑");
-                } else {
-                  print("下滑");
-                  isShow = false;
-                }
-              } else if (notification is ScrollEndNotification) {
-                print("结束滚动");
-                  isShow = false;
-              }
-              _isLastPixels = notification.metrics.pixels;
-
-              setState(() {
-                _isShowBottomView = isShow;  
-              });
-              return true;
-            },
-            child: Stack(
-              alignment: AlignmentDirectional.bottomCenter,
-              children: [
-                contentScrollView(),
-                  Positioned(
-                    width: BKSizeFit.screenWidth ?? 0 - (16.0 * 2),
-                    bottom: 50,
-                    child: 
-                  Offstage(
-                    offstage: _isShowBottomView,
-                    child:  bottomBtnView(),
-                  )
-                ),
-              ],
-            )));
+      appBar: m_AppBar(context, "入驻资料", color: Colors.white),
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          Expanded(child: contentScrollView()),
+          buttonBtn()
+        ],
+      )
+    );   
   }
 
-  Widget bottomBtnView() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(30)),
-        boxShadow: [
-          BoxShadow(
-            color: Color(0xFFE8E8E8),
-            offset: Offset(0, 0),
-            blurRadius: 10,
-            spreadRadius: 1,
-          ),
-        ],
-      ),
+  /// 提交审核按钮
+  Widget buttonBtn(){
+    return Visibility(
+      visible: isShowBtn(),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            TextIconButton(
-              type: TextIconButtonType.imageTop,
-              icon: Icon(Icons.ad_units),
-              text: Text("简历导出"),
-              onTap: () {
-                print('简历导出');
-              },
-            ),
-            TextIconButton(
-              type: TextIconButtonType.imageTop,
-              icon: Icon(Icons.cake),
-              text: Text("隐私保护"),
-              onTap: () {
-                print('隐私保护');
-              },
-            ),
-            TextIconButton(
-              type: TextIconButtonType.imageTop,
-              icon: Icon(Icons.palette),
-              text: Text("预览"),
-              onTap: () {
-                print('点击预览');
-                // getIt<NavigateService>().pushNamed("/myResume");
-                // Navigator.of(context).pushNamed("/myResume",arguments: userDataModel);
-                Navigator.of(context).pushNamed(MyResume.routeName,arguments: userDataModel);
-              },
-            ),
-          ],
+        padding: EdgeInsets.fromLTRB(16.px, 16.px, 16.px, BKSizeFit.statusBottomHeight),
+        child: MainButton(
+          text: "提交审核",
+          OnPressed: (){
+            requestReview();
+          },
         ),
       ),
     );
   }
-
+  
+  /// 入驻资料
   Widget contentScrollView() {
-    return SingleChildScrollView(
-        child: _updateHeaderView(userDataModel: this.userDataModel));
+    return SingleChildScrollView(               
+        child: Container(
+        padding: EdgeInsets.fromLTRB(16.px, 16.px, 16.px, 20.px),
+        child: content(),
+      )
+    );
   }
-}
-
-class _updateHeaderView extends StatefulWidget {
-  _updateHeaderView({Key? key, required this.userDataModel}) : super(key: key);
-
-  Person_inUuserData? userDataModel;
-
-  @override
-  State<_updateHeaderView> createState() => _updateHeaderViewState();
-}
-
-class _updateHeaderViewState extends State<_updateHeaderView> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.fromLTRB(16, 16, 16, 20),
-      child: Column(
+  Widget content() {
+    return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "新朋友，很高兴认识你",
-            style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: m_colors.title_01_color),
-          ),
-          SizedBox(height: 8),
-          Text(
-            "请务必根据自己实际情况填写入驻资料，这样有助于帮你找到最合适的企业～",
-            style: TextStyle(fontSize: 13, color: m_colors.content_02_color),
-          ),
-          SizedBox(height: 16),
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).pushNamed(importResume.routeName);
-            },
-            child: Container(
-              padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
-              width: BKSizeFit.screenWidth,
-              height: 54,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-                color: m_colors.back_01_color,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "上传简历，自动填充！",
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        color: m_colors.title_01_color),
-                  ),
-                  Image.asset(
-                    "images/person/icon_person_userinfo_btn.png",
-                    width: 78,
-                    height: 29,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 32),
+          headerView(),
+          SizedBox(height: 8.px),
+          showCompView(),
+          
+          loadingJlView(),
+
+          SizedBox(height: 32.px),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -228,27 +108,25 @@ class _updateHeaderViewState extends State<_updateHeaderView> {
                 children: [
                   Text("形象照",
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 15.px,
                           fontWeight: FontWeight.w600,
                           color: m_colors.title_01_color)),
                   Text("查看技巧",
                       style:
-                          TextStyle(fontSize: 12, color: m_colors.backColor)),
+                          TextStyle(fontSize: 12.px, color: m_colors.backColor)),
                 ],
               ),
-              SizedBox(height: 4),
+              SizedBox(height: 4.px),
               Text("人才列表将展示该图，这是给企业的第一印象",
                   style: TextStyle(
-                      fontSize: 12, color: m_colors.content_02_color)),
-              SizedBox(
-                height: 16,
-              ),
+                      fontSize: 12.px, color: m_colors.content_02_color)),
+              SizedBox(height: 16.px),
               GestureDetector(
-                child: widget.userDataModel?.avatarUrl == null
+                child: userDataModel?.avatarUrl == null
                     ? Image.asset(
                         "images/person/icon_person_add_headImg.png",
-                        width: 120,
-                        height: 85,
+                        width: 120.px,
+                        height: 85.px,
                         fit: BoxFit.cover,
                       )
                     : Container(
@@ -260,31 +138,31 @@ class _updateHeaderViewState extends State<_updateHeaderView> {
                           children: [
                             Container(
                               child: Image.network(
-                                widget.userDataModel!.avatarUrl!,
-                                width: 120,
-                                height: 85,
+                                userDataModel!.avatarUrl!,
+                                width: 120.px,
+                                height: 85.px,
                                 fit: BoxFit.cover,
                               ),
                             ),
                             Positioned(
                               child: Container(
                                 color: Colors.black.withOpacity(0.4),
-                                height: 20,
+                                height: 20.px,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset(
                                       "images/person/icon_person_edi_photo.png",
-                                      width: 12,
-                                      height: 12,
+                                      width: 12.px,
+                                      height: 12.px,
                                       fit: BoxFit.cover,
                                     ),
-                                    SizedBox(width: 6),
+                                    SizedBox(width: 6.px),
                                     Text(
                                       "编辑图片",
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 12,
+                                          fontSize: 12.px,
                                           fontWeight: FontWeight.w500),
                                     )
                                   ],
@@ -300,116 +178,352 @@ class _updateHeaderViewState extends State<_updateHeaderView> {
                 onTap: () {
                   print("点击选择照片");
                   //选择照片
-                  choose_imagevideo_tool.m_choose_image((xfile) {
-                    if (xfile != null) {
-                      print("选择照片");
-                      PersonalService.PostUpdateHeadImg(xfile.path, (object) {
-                        if (object.isSuccess) {
-                          setState(() {
-                            widget.userDataModel?.avatarUrl = object.data;
-                          });
-                        } else {
-                          EasyLoading.showToast(object.message!);
-                        }
-                      });
-                    }
-                  });
+                  _openGallery();
                 },
               )
             ],
           ),
           _add_userinfo(
-              userDataModel: widget.userDataModel,
+              userDataModel: userDataModel,
               isRefresh: () {
                 isRefresh();
 //获取入驻资料
               }), //基本信息
           _add_professional(
-              userDataModel: widget.userDataModel,
+              userDataModel: userDataModel,
               isRefresh: () {
                 isRefresh();
 //获取入驻资料
               }), //职业信息
           _add_education(
-              educationDtoList: widget.userDataModel?.educationDtoList,
+              educationDtoList: userDataModel?.educationDtoList,
               isRefresh: () {
                 isRefresh();
 //获取入驻资料
               }), //教育经历
           _add_workExperience(
-              workExperienceDtoList:
-                  widget.userDataModel?.workExperienceDtoList,
+              workExperienceDtoList: userDataModel?.workExperienceDtoList,
               isRefresh: () {
                 isRefresh();
 //获取入驻资料
               }), //工作经历
           _add_projectExperience(
-              projectDtoList: widget.userDataModel?.projectDtoList,
+              projectDtoList: userDataModel?.projectDtoList,
+              careerDirectionId: '${userDataModel?.careerDto!.careerDirectionId}',
               isRefresh: () {
                 isRefresh();
 //获取入驻资料
-              }),
-          SizedBox(height: 30),
-          Offstage(
-            offstage: false,
-            child: MainButton(
-              text: "提交审核",
-              OnPressed: () {
-                if (isValidation()) {
-                  EasyLoading.show(status: "提交中...");
-                  PersonalService.saveInfoAudit((object) {
-                    if (object.isSuccess) {
-                      EasyLoading.showToast("提交成功");
-                      Navigator.of(context).pop();
-                    } else {
-                      EasyLoading.showToast(object.message!);
-                    }
-                  });
-                }
-              },
-              width: 0,
-            ),
-          ) //项目经验
+              }), //项目经验
         ],
+      );
+  }
+
+  Widget headerView(){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Offstage(
+        offstage: !(userDataModel?.status != 3),
+        child: Text(
+          "新朋友，很高兴认识你",
+          style: TextStyle(
+            fontSize: 20.px,
+            fontWeight: FontWeight.w600,
+            color: m_colors.title_01_color
+          ),
+        ),
+      ),
+      
+      SizedBox(height: 8.px),
+      Text(
+        "请务必根据自己实际情况填写入驻资料，这样有助于帮你找到最合适的企业～",
+        style: TextStyle(
+          fontSize: 13.px, 
+          color: m_colors.content_02_color
+        ),
+      )
+    ]);
+  }
+  /// 上传简历
+  Widget loadingJlView(){
+    return Container(
+            padding: EdgeInsets.symmetric(horizontal: 12.px,vertical:  8.px),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(6),
+              color: m_colors.back_01_color,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "上传简历，自动填充！",
+                  style: TextStyle(
+                      fontSize: 15.px,
+                      fontWeight: FontWeight.w600,
+                      color: m_colors.title_01_color),
+                ),
+                Container(
+                  // alignment: Alignment.center,
+                  alignment: Alignment(0.5, 0.0),
+                  width: 94.px,
+                  height: 41.px,
+                  decoration: BoxDecoration(
+                    color: m_colors.backColor,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: TextIconButton(
+                    type: TextIconButtonType.imageRight,
+                    text: Text('导入简历', style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white, 
+                      fontSize: 12.px)
+                    ),
+                    icon: Icon(Icons.arrow_right, color: Colors.white),
+                    onTap: () {
+                      Navigator.of(context).pushNamed(importResume.routeName);
+                    },
+                  ),
+                )
+              ],
+            ),
+          );
+  }
+
+  /// 资料进度
+  Widget showCompView() {
+    return Visibility(
+      visible: isShowLoading(),
+      child: Container(
+        margin: EdgeInsets.only(bottom: 16.px),
+        padding: EdgeInsets.symmetric(horizontal: 8.px, vertical: 16.px),
+        decoration: BoxDecoration(
+          color: m_colors.color_FFF9F1,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Image.asset(
+                  'personal_jd'.png,
+                  width: 24.px,
+                  height: 24.px,
+                  // fit: BoxFit.cover,
+                ),
+                SizedBox(width: 4.px),
+                Expanded(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: m_colors.color_FB8B39,
+                      fontSize: 13.px
+                    ),
+                  )
+                )
+              ],
+            ),
+            SizedBox(height: 8.px),
+            ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(20.px)),
+              child: LinearProgressIndicator(
+                backgroundColor: Colors.white,
+                valueColor: AlwaysStoppedAnimation(m_colors.color_FB8B39),
+                value: progressCount / 100,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
 
+
+
+  /// 是否显示审核按钮
+  bool isShowBtn(){
+    return userDataModel != null && userDataModel!.isShowStatusBtn();
+  }
+
+  requestReview() {
+    /// 判断
+    if (userDataModel == null){ return; }
+    if (isAddBasic()) {
+      EasyLoading.showToast('请完善基本信息');
+    }else if (isAddPro()) {
+      EasyLoading.showToast('请完善职业信息');
+    }else if (isAddEducate()){
+      EasyLoading.showToast('请完善教育经历');
+    }else if (isAddWork()){
+      EasyLoading.showToast('请完善工作经历');
+    }else if (isAddProject()){
+      EasyLoading.showToast('请完善项目经历');
+    }
+    else {
+      EasyLoading.show(status: "提交中...");
+      PersonalService.saveInfoAudit((object) {
+        if (object.isSuccess) {
+          EasyLoading.showToast("提交成功");
+          Navigator.of(context).pop();
+        } else {
+          EasyLoading.showToast(object.message!);
+        }
+      });
+    }
+  }
+
+  /// 入驻资料进度
+  bool isShowLoading(){
+    bool isShow = false;
+    if (userDataModel?.status == 1 && compNum > 0) {
+      isShow = true;
+    }
+    return isShow;
+  }
+
+   int compNum = 0;
+   String title = '';
+   double progressCount = 0.0;
+
+  
+
+   /// 项目个数每一条增加5%
+  double projectProgressCount() {
+    int projectDtoListCount = 0;
+    if (userDataModel != null) {
+      projectDtoListCount = userDataModel!.projectDtoList!.length;
+    }
+     return projectDtoListCount > 1 ? (projectDtoListCount - 1) * 5.0 : 0;
+  }
+
+
+  loadingTitle(){
+    switch (compNum) {
+      case 1: 
+        title = "完成度超过2%的用户，仍需努力哦～";
+        progressCount = 2.0;
+        break;
+    case 2:
+        title = "完成度超过5%的用户，加油~";
+        progressCount = 5.0;
+        break;
+    case 3:
+        title = "完成度超过10%的用户，继续加油~";
+        progressCount = 10.0;
+        break;
+    case 4:
+        title = "完成度超过30%的用户，继续完善让履历更风采~";
+        progressCount = 30.0;
+        break;
+    case 5:
+        // 判断项目个数
+        progressCount = 60.0 + projectProgressCount();
+        progressCount = progressCount > 90 ? 90 : progressCount;
+        title = progressCount >= 90 ? "“恭喜你！完成度超过90%以上的用户，未来可期～”" : "“恭喜你！完成度超过$progressCount%的用户，全面的工作和项目经历可以进一步提升竞争力~”";
+        break;
+    default:
+        title = "";
+        progressCount = 0.0;
+    }
+  }
+
+
+  /// 判断是否有编辑基本信息
+  bool isAddBasic(){
+    if (userDataModel!.realName!.isEmpty ||
+        userDataModel!.provinceName!.isEmpty ||
+        userDataModel!.cityName!.isEmpty ||
+        userDataModel!.areasName!.isEmpty ||
+        userDataModel!.remoteWorkReasonStr!.isEmpty ||
+        userDataModel!.sex == -1){
+          return true;
+        } else {
+          return false;
+    }
+  }
+
+  bool isAddPro() {
+    if (userDataModel!.careerDto!.careerDirectionName!.isEmpty ||
+        userDataModel!.careerDto!.curSalary == null ||
+        userDataModel!.careerDto!.workYearsName!.isEmpty){
+          return true;
+        } else {
+          return false;
+        }
+  }
+
+  bool isAddEducate(){
+    return userDataModel!.educationDtoList!.isNotEmpty;
+  }
+
+  bool isAddWork(){
+    return userDataModel!.workExperienceDtoList!.isNotEmpty;
+  }
+
+  bool isAddProject(){
+    return userDataModel!.projectDtoList!.isNotEmpty;
+  }
+
+  loadingWithCount(){
+    if (!isAddBasic()) {
+      compNum += 1;
+    }
+    if (!isAddPro()) {
+      compNum += 1;
+    }
+    if (isAddEducate()) {
+        compNum += 1;
+    }
+    if (isAddWork()) {
+        compNum += 1;
+    }
+    if (isAddProject()) {
+        compNum += 1;
+    }
+    loadingTitle();
+  }
+
+  /// 获取入驻资料
   isRefresh() {
     getInuserInfodata((data) {
       setState(() {
-        widget.userDataModel = data;
+        userDataModel = data;
+        loadingWithCount();
       });
     });
   }
 
-  bool isValidation() {
-    if (widget.userDataModel!.avatarUrl == null) {
-      EasyLoading.showToast("形象照不能为空");
-      return false;
-    } else if (widget.userDataModel!.realName == null ||
-        widget.userDataModel!.sex == null) {
-      EasyLoading.showToast("基本信息不能为空");
-      return false;
-    } else if (widget.userDataModel!.careerDto!.careerDirectionName == null) {
-      EasyLoading.showToast("职业信息不能为空");
-      return false;
-    } else if (widget.userDataModel!.educationDtoList == null ||
-        widget.userDataModel!.educationDtoList!.length <= 0) {
-      EasyLoading.showToast("教育经历不能为空");
-      return false;
-    } else if (widget.userDataModel!.workExperienceDtoList == null ||
-        widget.userDataModel!.workExperienceDtoList!.length <= 0) {
-      EasyLoading.showToast("工作经历不能为空");
-      return false;
-    } else if (widget.userDataModel!.projectDtoList == null ||
-        widget.userDataModel!.projectDtoList!.length <= 0) {
-      EasyLoading.showToast("项目经历不能为空");
-      return false;
-    } else {
-      return true;
-    }
+
+  //打开文件夹选单张图片
+  _openGallery() async {
+
+    // XFile? pickedFile = await picker.pickImage(
+    //     source: ImageSource.gallery, maxHeight: 600, maxWidth: 600);
+
+    // if (pickedFile != null) {
+    //   print(pickedFile.path);
+    //   // print(File(pickedFile.path));
+    //   setState(() {
+    //     _imageFile = pickedFile;
+    //   });
+    // }
+    choose_imagevideo_tool.m_choose_image((xfile) {
+      print('获取当前照片');
+        if (xfile != null) {
+          print("选择照片");
+          PersonalService.PostUpdateHeadImg(xfile.path, (object) {
+            if (object.isSuccess) {
+              setState(() {
+                userDataModel!.avatarUrl = object.data;
+              });
+            } else {
+              EasyLoading.showToast(object.message!);
+            }
+          });
+        }
+      });
   }
+
+
 }
 
 //基本信息
@@ -427,7 +541,7 @@ class __add_userinfoState extends State<_add_userinfo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(0, 32, 0, 0),
+      padding: EdgeInsets.only(top: 32.px),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -437,29 +551,27 @@ class __add_userinfoState extends State<_add_userinfo> {
               Text(
                 "基本信息",
                 style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 15.px,
                     fontWeight: FontWeight.w600,
                     color: m_colors.title_01_color),
               ),
               Container(
                 color: Colors.white,
-                padding: EdgeInsets.fromLTRB(20, 4, 0, 4),
+                padding: EdgeInsets.fromLTRB(20.px, 4.px, 0, 4.px),
                 child: GestureDetector(
                   child: Row(
                     children: [
                       Image.asset(
                         "images/person/icon_person_write.png",
-                        width: 16,
-                        height: 16,
+                        width: 16.px,
+                        height: 16.px,
                         fit: BoxFit.cover,
                       ),
-                      SizedBox(
-                        width: 4,
-                      ),
+                      SizedBox(width: 4.px),
                       Text(
                         "编辑",
                         style: TextStyle(
-                            fontSize: 12, color: m_colors.content_01_color),
+                            fontSize: 12.px, color: m_colors.content_01_color),
                       ),
                     ],
                   ),
@@ -482,24 +594,24 @@ class __add_userinfoState extends State<_add_userinfo> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 16),
+                SizedBox(height: 16.px),
                 Text(widget.userDataModel?.realName ?? "",
                     style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 15.px,
                         fontWeight: FontWeight.w600,
                         color: m_colors.content_01_color)),
-                SizedBox(height: 4),
+                SizedBox(height: 4.px),
                 Text(getuserDataText(widget.userDataModel),
                     style: TextStyle(
-                        fontSize: 13, color: m_colors.content_01_color)),
-                SizedBox(height: 4),
+                        fontSize: 13.px, color: m_colors.content_01_color)),
+                SizedBox(height: 4.px),
                 Text(widget.userDataModel?.remoteWorkReasonStr ?? "",
                     style: TextStyle(
-                        fontSize: 13, color: m_colors.content_02_color)),
+                        fontSize: 13.px, color: m_colors.content_02_color)),
               ],
             ),
           ),
-          SizedBox(height: 31),
+          SizedBox(height: 16.px),
           Divider(
             color: m_colors.divider_02_color,
           )
@@ -524,7 +636,7 @@ class __add_professionalState extends State<_add_professional> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(0, 32, 0, 0),
+      padding: EdgeInsets.only(top: 16.px),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -878,9 +990,10 @@ class __add_workExperienceState extends State<_add_workExperience> {
 //项目经验
 class _add_projectExperience extends StatefulWidget {
   _add_projectExperience(
-      {Key? key, required this.projectDtoList, required this.isRefresh()})
+      {Key? key, required this.projectDtoList, required this.careerDirectionId ,required this.isRefresh()})
       : super(key: key);
   List<Person_projectDto>? projectDtoList;
+  String careerDirectionId;
   Function() isRefresh;
   @override
   State<_add_projectExperience> createState() => __add_projectExperienceState();
@@ -928,7 +1041,7 @@ class __add_projectExperienceState extends State<_add_projectExperience> {
                   ),
                   onTap: () {
                     Navigator.of(context).pushNamed(add_projectView.routeName,
-                        arguments: {"type": "1"}).then((value) {
+                        arguments: [{"type": "1",}, widget.careerDirectionId] ).then((value) {
                       widget.isRefresh();
                       //List<SkillsClassModel> skillsClassModelList = value as? List;
                     });
@@ -1000,7 +1113,7 @@ class __add_projectExperienceState extends State<_add_projectExperience> {
                   ),
                   onTap: () {
                     Navigator.of(context).pushNamed(add_projectView.routeName,
-                        arguments: {"type": "2", "model": model}).then((value) {
+                        arguments: [{"type": "2", "model": model}, widget.careerDirectionId]).then((value) {
                       widget.isRefresh();
                     });
                   },

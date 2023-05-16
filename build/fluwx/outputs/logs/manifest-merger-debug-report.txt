@@ -1,0 +1,103 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:1:1-46:12
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:1:1-46:12
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:1:1-46:12
+	package
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:2:5-31
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:6:22-73
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:7:22-78
+queries
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:10:5-12:15
+package#com.tencent.mm
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:11:9-50
+	android:name
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:11:18-47
+application
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:14:5-45:19
+activity#com.jarvan.fluwx.wxapi.FluwxWXEntryActivity
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:15:9-20:58
+	android:launchMode
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:17:13-44
+	android:exported
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:18:13-37
+	android:theme
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:20:13-55
+	android:taskAffinity
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:19:13-52
+	android:name
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:16:13-55
+activity-alias#${applicationId}.wxapi.WXEntryActivity
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:22:9-28:57
+	android:launchMode
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:25:13-43
+	android:exported
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:24:13-36
+	android:targetActivity
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:26:13-81
+	android:theme
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:28:13-55
+	android:taskAffinity
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:27:13-52
+	android:name
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:23:13-66
+activity-alias#${applicationId}.wxapi.WXPayEntryActivity
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:29:9-34:57
+	android:launchMode
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:32:13-48
+	android:exported
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:31:13-36
+	android:targetActivity
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:33:13-81
+	android:theme
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:34:13-55
+	android:name
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:30:13-69
+provider#com.jarvan.fluwx.FluwxFileProvider
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:36:9-44:20
+	android:grantUriPermissions
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:40:13-47
+	android:authorities
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:38:13-65
+	android:exported
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:39:13-37
+	android:name
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:37:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:41:13-43:69
+	android:resource
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:43:17-66
+	android:name
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:42:17-67
+uses-sdk
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml

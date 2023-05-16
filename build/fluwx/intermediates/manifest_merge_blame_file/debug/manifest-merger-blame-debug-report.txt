@@ -1,0 +1,93 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.jarvan.fluwx" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="16"
+6-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+7        android:targetSdkVersion="16" />
+7-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml
+8
+9    <uses-permission android:name="android.permission.INTERNET" />
+9-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:4:5-67
+9-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:4:22-64
+10    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+10-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:5:5-79
+10-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:5:22-76
+11    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+11-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:6:5-76
+11-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:6:22-73
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:7:5-81
+12-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:7:22-78
+13
+14    <!-- Support WeChat query on Android P -->
+15    <queries>
+15-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:10:5-12:15
+16        <package android:name="com.tencent.mm" />
+16-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:11:9-50
+16-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:11:18-47
+17    </queries>
+18
+19    <application>
+19-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:14:5-45:19
+20        <activity
+20-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:15:9-20:58
+21            android:name="com.jarvan.fluwx.wxapi.FluwxWXEntryActivity"
+21-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:16:13-55
+22            android:exported="false"
+22-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:18:13-37
+23            android:launchMode="singleTask"
+23-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:17:13-44
+24            android:taskAffinity="${applicationId}"
+24-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:19:13-52
+25            android:theme="@style/DisablePreviewTheme" />
+25-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:20:13-55
+26
+27        <activity-alias
+27-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:29:9-34:57
+28            android:name="${applicationId}.wxapi.WXPayEntryActivity"
+28-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:30:13-69
+29            android:exported="true"
+29-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:31:13-36
+30            android:launchMode="singleInstance"
+30-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:32:13-48
+31            android:targetActivity="com.jarvan.fluwx.wxapi.FluwxWXEntryActivity"
+31-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:33:13-81
+32            android:theme="@style/DisablePreviewTheme" />
+32-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:34:13-55
+33        <activity-alias
+33-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:22:9-28:57
+34            android:name="${applicationId}.wxapi.WXEntryActivity"
+34-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:23:13-66
+35            android:exported="true"
+35-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:24:13-36
+36            android:launchMode="singleTop"
+36-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:25:13-43
+37            android:targetActivity="com.jarvan.fluwx.wxapi.FluwxWXEntryActivity"
+37-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:26:13-81
+38            android:taskAffinity="${applicationId}"
+38-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:27:13-52
+39            android:theme="@style/DisablePreviewTheme" />
+39-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:28:13-55
+40
+41        <provider
+41-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:36:9-44:20
+42            android:name="com.jarvan.fluwx.FluwxFileProvider"
+42-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:37:13-62
+43            android:authorities="${applicationId}.fluwxprovider"
+43-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:38:13-65
+44            android:exported="false"
+44-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:39:13-37
+45            android:grantUriPermissions="true" >
+45-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:40:13-47
+46            <meta-data
+46-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:41:13-43:69
+47                android:name="android.support.FILE_PROVIDER_PATHS"
+47-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:42:17-67
+48                android:resource="@xml/fluwx_file_provider_paths" />
+48-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/fluwx-3.13.1/android/src/main/AndroidManifest.xml:43:17-66
+49        </provider>
+50    </application>
+51
+52</manifest>

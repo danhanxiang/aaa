@@ -16,8 +16,8 @@ class choose_imagevideo_tool {
     try {
       final XFile? pickedFile = await _picker.pickImage(
         source: ImageSource.gallery,
-        maxWidth: null,
-        maxHeight: null,
+        // maxWidth: null,
+        // maxHeight: null,
         imageQuality: quality,
       );
       print("选择了图片");

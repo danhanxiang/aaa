@@ -31,18 +31,18 @@ dependencies:
     sdk: flutter
   dio: ^4.0.6  #网络请求库
   #json->model库  
-  json_model: ^1.0.0   
-  json_serializable: ^5.0.0 
+  json_model: ^1.0.0
+  json_serializable: ^5.0.0
   #视频播放
   video_player: ^2.4.2
   shared_preferences: ^2.0.15 #数据存储
-  
+
   umeng_common_sdk: ^1.2.4
   umeng_verify_sdk: ^1.0.0
 
   flutter_easyloading: ^3.0.5   #简单的加载loading
 
-  get_it: ^7.2.0  
+  get_it: ^7.2.0
 
   # flutter_inappwebview: ^5.4.3+7 #webview
   flutter_inappwebview: '5.4.4' #webview
@@ -50,13 +50,14 @@ dependencies:
 
   image_picker: ^0.8.5+3 #图片选择
   file_picker: ^5.2.2 #文件选择 
-  
+
 
   flutter_pickers: ^2.1.9 #选择器
   flutter_easyrefresh: ^2.2.1 #刷新
 
   package_info_plus: ^1.4.2 #获取app版本号
-
+  #微信分享
+  fluwx: ^3.9.1
   # 百度地图
   flutter_baidu_mapapi_map: ^3.3.0
   flutter_bmflocation: ^3.3.0
@@ -69,13 +70,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   intl: ^0.17.0
   # Dart 常用工具类库 https://github.com/Sky24n/common_utils
-  common_utils: 2.1.0
-  
+  common_utils: ^2.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-    
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -95,7 +95,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -104,6 +104,7 @@ flutter:
   # assets:
   #   - assets/images/
   assets:
+    - assets/images/
     - images/Launch.mp4
     - images/login/icon_login_off@2x.png
     - images/login/icon_Navipop_return.png
@@ -163,7 +164,18 @@ flutter:
     - images/person/icon_person_edi_photo.png
     - images/person/icon_person_Logo.png
 
-    
+    - assets/images/bg_check_role.png
+    - assets/images/icon_copy.png
+    - assets/images/icon_wechat_qr.png
+    - assets/images/icon_firm_admin.png
+    - assets/images/icon_firm_dev.png
+    - assets/images/icon_audition_manage.png
+    - assets/images/icon_treaty_order.png
+    - assets/images/icon_firm_account.png
+    - assets/images/icon_firm_manage.png
+    - assets/images/icon_collect.png
+    - assets/images/icon_collected.png
+    - assets/images/icon_date_select.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -48,4 +48,9 @@ class Person_inUuserData {
   
   factory Person_inUuserData.fromJson(Map<String,dynamic> json) => _$Person_inUuserDataFromJson(json);
   Map<String, dynamic> toJson() => _$Person_inUuserDataToJson(this);
+
+  /// 是否显示提交审核按钮
+  bool isShowStatusBtn(){
+    return status == 1 || status == 4;
+  }
 }

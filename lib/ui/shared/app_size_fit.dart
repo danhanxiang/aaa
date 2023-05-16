@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter/material.dart';
 import 'package:people_living_flutterdemo/utils/log.dart';
 
 /*
@@ -8,24 +9,30 @@ import 'package:people_living_flutterdemo/utils/log.dart';
 */
 
 class BKSizeFit {
-  // 手机分辨率宽
-  static double? physicalWidth;
-  // 手机分辨率高
-  static double? physicalHeight;
-  // 手机大小宽
-  static double? screenWidth;
-  // 手机大小高
-  static double? screenHeight;
-  // 手机像素比 
+  /// 手机分辨率宽
+  static double physicalWidth = 0;
+  /// 手机分辨率高
+  static double physicalHeight = 0;
+  /// 手机大小宽
+  static double screenWidth = 0;
+  /// 手机大小高
+  static double screenHeight = 0;
+  /// 手机像素比 
   static double dpr = 0;
-  // 手机状态栏高度
-  static double? statusHeight;
+  /// 手机状态栏高度 
+  static double statusHeight = 0;
+  /// 手机底部安全栏高度
+  static double statusBottomHeight = 0;
+  /// 手机appBar导航栏高度
+  static double appBarHeight = 0;
+  /// 手机导航栏高度
+  static double navHeight = 0;
 
-  static double? rpx;
-  static double? px;
+  static double rpx = 0;
+  static double px = 0;
 
 
-  // standardSize: 设计稿尺寸 默认750
+  /// standardSize: 设计稿尺寸 默认750
   static void initialize( {double standardSize: 750} ) {
     // 1. 手机物理分辨率
     physicalWidth = window.physicalSize.width;
@@ -33,17 +40,22 @@ class BKSizeFit {
 
     // 2. 获取手机屏幕宽高
     // 手机像素比 
-    dpr =  window.devicePixelRatio;
+    dpr = window.devicePixelRatio;
 
-    screenWidth = physicalWidth ?? 0 / dpr;
-    screenHeight = physicalHeight ?? 0 / dpr;
+    screenWidth = physicalWidth / dpr;
+    screenHeight = physicalHeight / dpr;
 
     // 状态了高度
     statusHeight = window.padding.top / dpr;
+    statusBottomHeight = window.padding.bottom / dpr;
+
+    appBarHeight = kToolbarHeight; 
+
+    navHeight = statusHeight + appBarHeight;
 
     // 计算rpx大小 
-    rpx = screenWidth ?? 0 / standardSize;
-    px = screenWidth ?? 0 / standardSize * 2;
+    rpx = screenWidth / standardSize;
+    px = screenWidth / standardSize * 2;
 
     String printTitle = '\n 分辨率:$physicalWidth * $physicalHeight \n 宽高:$screenWidth * $screenHeight \n 状态栏高度:$statusHeight \n rpx: $rpx';
     bkLog(printTitle,  StackTrace.current);
@@ -56,10 +68,10 @@ class BKSizeFit {
 
   // 设计稿为像素: 设计稿200 setRpx(200 * 2)
   static double setRpx(double size) {
-    return rpx ?? 0 * size;
+    return rpx * size;
   }
   // 设计稿为pt 设计稿200 setRpx(200)
   static double setPx(double size) {
-    return px ?? 0 * size;
+    return px * size;
   }
 }

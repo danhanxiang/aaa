@@ -10,7 +10,9 @@ import 'package:people_living_flutterdemo/core/components/m_AppBar.dart';
 import 'package:people_living_flutterdemo/core/components/m_mainButton.dart';
 import 'package:people_living_flutterdemo/core/components/m_textFiled.dart';
 import 'package:flutter_pickers/pickers.dart';
+import 'package:people_living_flutterdemo/core/extension/int_extension.dart';
 import 'package:people_living_flutterdemo/core/service/personal_api/personal_api.dart';
+import 'package:people_living_flutterdemo/ui/shared/app_size_fit.dart';
 
 import '../../../../core/models/index.dart';
 
@@ -91,7 +93,7 @@ class _add_userInfoViewState extends State<add_userInfoView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: m_AppBar(context, "编辑基本信息"),
+        appBar: m_AppBar(context, "编辑基本信息", color: Colors.white),
         backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
         body: Stack(
@@ -101,7 +103,8 @@ class _add_userInfoViewState extends State<add_userInfoView> {
               child: Column(
                 children: [
                   //姓名
-                  m_textFiled(
+                  m_textFiled(                    
+                    key: ValueKey('name'),
                     onChanged: (value) {
                       setState(() {
                         addNameText = value;
@@ -113,6 +116,7 @@ class _add_userInfoViewState extends State<add_userInfoView> {
 
                   //性别
                   m_textFiledBtn(
+                    key: ValueKey('sex'),
                     onTap: () {
                       Pickers.showSinglePicker(context,
                           data: PickerDataType.sex,
@@ -131,6 +135,7 @@ class _add_userInfoViewState extends State<add_userInfoView> {
 
                   //出生日期
                   m_textFiledBtn(
+                    key: ValueKey('birthday'),
                     onTap: () {
                       Pickers.showDatePicker(context,
                           mode: DateMode.YMD,
@@ -150,6 +155,7 @@ class _add_userInfoViewState extends State<add_userInfoView> {
                   ),
                   //居住地
                   m_textFiledBtn(
+                    key: ValueKey('address'),
                     onTap: () {
                       Pickers.showMultiLinkPicker(
                         context,
@@ -178,26 +184,29 @@ class _add_userInfoViewState extends State<add_userInfoView> {
                     hintText: "请选择当前居住地",
                     TextEditingtext: "${initProvince}${initCity}${initTown}",
                   ),
-                  //性别
+                  // 工作原因
                   m_textFiledBtn(
-                    onTap: () {
-                      Pickers.showSinglePicker(context,
-                          data: workWhyLists,
-                          selectData: addworkText,
-                          pickerStyle: ClosePickerStyle(
-                            haveRadius: true,
-                            title: "远程工作原因",
-                          ), onChanged: (p, index) {
-                        print(index);
-                        setState(() {
-                          WorkWhy workModel = workWhyModels[index];
-                          addworkTextID = workModel.id.toString();
-                          addworkText = p;
-                        });
-                      });
-                    },
+                    key: ValueKey('work'),
                     hintText: "请选择远程工作原因",
                     TextEditingtext: addworkText,
+                    onTap: () {
+                      Pickers.showSinglePicker(
+                        context,
+                        data: workWhyLists,
+                        selectData: addworkText,
+                        pickerStyle: ClosePickerStyle(
+                          haveRadius: true,
+                          title: "远程工作原因",
+                        ), 
+                        onChanged: (p, index) {
+                          setState(() {
+                            WorkWhy workModel = workWhyModels[index];
+                            addworkTextID = workModel.id.toString();
+                            addworkText = p;
+                          }
+                        );
+                      });
+                    },
                   ),
                 ],
               ),
@@ -205,7 +214,7 @@ class _add_userInfoViewState extends State<add_userInfoView> {
             Positioned(
               child: Container(
                 color: Colors.white,
-                padding: EdgeInsets.fromLTRB(16, 17, 16, 17),
+                padding: EdgeInsets.fromLTRB(16.px, 17.px, 16.px, 17.px),
                 child: m_Button(
                   text: "保存",
                   OnPressed: () {
@@ -239,7 +248,7 @@ class _add_userInfoViewState extends State<add_userInfoView> {
                   },
                 ),
               ),
-              bottom: iskeyBoard(),
+              bottom: BKSizeFit.statusBottomHeight, //iskeyBoard(),
               left: 0,
               right: 0,
               height: 80,
@@ -248,13 +257,13 @@ class _add_userInfoViewState extends State<add_userInfoView> {
         ));
   }
 
-  double iskeyBoard() {
-    if (MediaQuery.of(context).viewInsets.bottom > 30) {
-      return 30 + MediaQuery.of(context).viewInsets.bottom - 30;
-    } else {
-      return 30;
-    }
-  }
+  // double iskeyBoard() {
+  //   if (MediaQuery.of(context).viewInsets.bottom > 30) {
+  //     return 30 + MediaQuery.of(context).viewInsets.bottom - 30;
+  //   } else {
+  //     return 30;
+  //   }
+  // }
 
   bool isValidation() {
     if (addNameText.length <= 0) {

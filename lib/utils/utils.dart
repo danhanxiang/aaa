@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class LogUtil {
+class LogUtils {
   static var _separator = "=";
   static var _split =
       "$_separator$_separator$_separator$_separator$_separator$_separator$_separator$_separator$_separator";
@@ -90,4 +90,6 @@ class LogUtil {
     print("\n");
     print("==================${title}日志结束=======================");
   }
+
+
 }

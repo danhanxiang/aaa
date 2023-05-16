@@ -3,8 +3,22 @@ import '../../models/index.dart';
 
 class HomeService {
   //获取首页职位推荐列表
-  static getPositionList(Function(ResultData object) onCompletion) async {
-    await HttpManager.GET('/developer_recommends/position').then((value) {
+  static getPositionList(Function(ResultData object) onCompletion ) async {
+    await HttpManager.GET('/visitor/getRecommendPosition').then((value) {
+      if (value.isSuccess) {
+        List newdata = [];
+        for (Map<String, dynamic> item in value.data) {
+          newdata.add(Home_positionListModel.fromJson(item));
+        }
+
+        value.data = newdata;
+      }
+      onCompletion(value);
+    });
+  }
+  //找工作 列表和搜索
+  static getForWorkList(number, search ,Function(ResultData object) onCompletion) async {
+    await HttpManager.GET('/visitor/getRecommendPosition',params: {'PageNum':number,'search':search}).then((value) {
       if (value.isSuccess) {
         List newdata = [];
         for (Map<String, dynamic> item in value.data) {
@@ -18,8 +32,7 @@ class HomeService {
   }
 
 //接单状态
-  static getIsserviceStatus(
-      String type, Function(ResultData object) onCompletion) async {
+  static getIsserviceStatus( String type, Function(ResultData object) onCompletion) async {
     await HttpManager.POST('/developer/updateServiceStatus', {'type': type})
         .then((value) {
       if (value.isSuccess) {}

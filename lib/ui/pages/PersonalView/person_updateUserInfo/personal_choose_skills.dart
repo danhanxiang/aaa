@@ -1,34 +1,51 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:people_living_flutterdemo/ProjectConfig/m_colors.dart';
 import 'package:people_living_flutterdemo/core/components/m_AppBar.dart';
 import 'package:people_living_flutterdemo/core/components/m_mainButton.dart';
 import 'package:people_living_flutterdemo/core/service/personal_api/personal_api.dart';
+import 'package:people_living_flutterdemo/ui/shared/app_size_fit.dart';
+import 'package:people_living_flutterdemo/ui/widget/sheet.dart';
 
 import '../../../../core/models/index.dart';
 
 class choose_skillsView extends StatefulWidget {
   static const String routeName = '/choose_skills';
-  choose_skillsView({Key? key, required this.projectDtoModel})
+  choose_skillsView({Key? key, required this.projectSkillList, required this.careerDirectionId})
       : super(key: key);
-
-  Person_projectDto projectDtoModel;
+  String careerDirectionId;
+  // Person_projectDto projectDtoModel;
+  List<SkillsClassModel>? projectSkillList;
   @override
   State<choose_skillsView> createState() => _choose_skillsViewState();
 }
 
 class _choose_skillsViewState extends State<choose_skillsView> {
+  /// 所有标签
   List<SkillsModel> SkillsModelLists = [];
+  /// 选中标签
   List<SkillsClassModel> selectedSkillsLists = [];
+  /// 搜索标签
+  late List<SkillsClassModel> searchTagList = [];
+  /// 是否显示搜索列表页
+  bool isShowSearch = false;
+  late TextEditingController textController;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    textController = TextEditingController(text: '');
+    getAllTags();
+  }
 
-    PersonalService.getSkillsList("", (object) {
+  getAllTags(){
+    List<SkillsClassModel> selectList = widget.projectSkillList ?? [];
+    PersonalService.getSkillsList(widget.careerDirectionId, selectList, (object) {
       if (object.isSuccess) {
         setState(() {
-          selectedSkillsLists = widget.projectDtoModel.projectSkillList ?? [];
+          selectedSkillsLists = widget.projectSkillList ?? [];
           SkillsModelLists = object.data;
           // for (SkillsClassModel selectedSkillsModel in selectedSkillsLists) {
           //   selectedSkillsModel.selected = true;
@@ -42,106 +59,226 @@ class _choose_skillsViewState extends State<choose_skillsView> {
     });
   }
 
+  /// 获取搜索标签接口
+  getSearchTags(String searchText){
+    EasyLoading();
+    PersonalService.getSearchTags(searchText, (object) {
+      EasyLoading.dismiss();
+      if (object.isSuccess) {
+        setState(() {
+          searchTagList = object.data;
+        });
+      }
+    });
+  }
+
+  /// 添加自定义标签
+  getDiyTag(String tag) {
+    EasyLoading();
+    PersonalService.getAddDiyTag(widget.careerDirectionId, tag, (object) {
+      EasyLoading.dismiss();
+      if (object.isSuccess) {
+        setState(() {
+          selectedSkillsLists.add(object.data);
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: m_AppBar(context, "选择技能标签"),
       backgroundColor: Colors.white,
-      body: Stack(
+      body: Container(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            searchBar(context),
+            isShowSearch ? searchList(context):
+            Expanded(child: allTag(context))
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget allTag(BuildContext context) {
+    return Column(
         children: [
-          Container(
-            padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
-            margin: EdgeInsets.only(bottom: 50),
-            child: ListView(
-              children: [
-                Container(
-                    padding: EdgeInsets.only(bottom: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "使用技能(已选)",
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
-                              color: m_colors.title_01_color),
-                        ),
-                        _CreateSeleteSkillView(
-                            selectedlist: selectedSkillsLists,
-                            onDelete: (deleteModel) {
-                              setState(() {
-                                for (SkillsModel skillsModel
-                                    in SkillsModelLists) {
-                                  List<SkillsClassModel> list1 = changeSkills(
-                                      skillsModel.children!, deleteModel);
-                                  skillsModel.children = list1;
-                                }
-                              });
-                            }),
-                      ],
-                    )),
-                Text(
-                  "常见技术标签",
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: m_colors.title_01_color),
-                ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: SkillsModelLists.map((e) {
-                      return Container(
-                        padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(e.skillName ?? "",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w600,
-                                    color: m_colors.content_01_color)),
-                            SizedBox(height: 16),
-                            _createSkillsView(
-                              list: e.children ?? [],
-                              selectedSkills: selectedSkillsLists,
-                              onSelected: (selectedModelList) {
-                                setState(() {
-                                  selectedSkillsLists = selectedModelList;
-                                });
-                              },
-                            )
-                          ],
-                        ),
-                      );
-                    }).toList(),
-                  ),
+          content(context),
+          bottomBtn(context)
+        ],
+    );
+  }
+
+  /// 底部保存按钮
+  Widget bottomBtn(BuildContext context) {
+    return Container(
+        height: 100,
+        width: BKSizeFit.screenWidth,
+        padding: EdgeInsets.fromLTRB(0, 17, 0, 30),
+        child: m_Button(
+          text: "保存",
+          OnPressed: () {
+            Navigator.of(context).pop(selectedSkillsLists);
+          },
+        ),
+      );
+  }
+
+  /// 内容widget
+  Widget content(BuildContext context) {
+    return Expanded(
+      child: ListView(
+          children: [
+            tagsList(context)
+          ],
+        ),
+    );
+  }
+
+  /// 选择标签view
+  Widget tagsList(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        diyTag(context),
+        selectItem(context),
+        allItems(context)
+      ],
+    );
+  }
+
+  Widget searchBar(BuildContext context){
+    return Container(
+      height: 50,
+      margin: EdgeInsets.only(bottom: 10),
+      child: CupertinoSearchTextField(
+        controller: textController,
+        placeholder: '搜索使用的技能标签',
+        placeholderStyle: TextStyle(color: m_colors.disableColor, fontSize: 15),
+        prefixInsets: EdgeInsets.symmetric(horizontal: 10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+          border: Border.all(width: 1, color: m_colors.disableColor),
+          color: Colors.white),
+          onChanged: (value) {
+            setState(() {
+              getSearchTags(value);
+              isShowSearch = value.length > 0;
+            });
+          },
+      ),
+    );
+  }
+  
+  Widget diyTag(BuildContext context) {
+    return Row(children: [
+        Text('没有找到我的技能标签?',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15, color: m_colors.title_01_color)),
+        TextButton(onPressed: (){
+          showAddTagAlertDialog(context, (tag){
+            getDiyTag(tag);
+          });
+        }, child: Text('手动添加', style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15, color: m_colors.backColor),))
+      ]);
+  }
+
+  /// 选中标签
+  Widget selectItem(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(bottom: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "使用技能(已选)",
+            style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w600,
+                color: m_colors.title_01_color),
+          ),
+          _CreateSeleteSkillView(
+              selectedlist: selectedSkillsLists,
+              onDelete: (deleteModel) {
+                setState(() {
+                  for (SkillsModel skillsModel
+                      in SkillsModelLists) {
+                    List<SkillsClassModel> list1 = changeSkills(
+                        skillsModel.children!, deleteModel);
+                    skillsModel.children = list1;
+                  }
+                });
+              }),
+        ],
+      ));
+  }
+
+  /// 所有标签
+  Widget allItems(BuildContext context) {
+    return Container(
+      child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: SkillsModelLists.map((e) {
+        return Container(
+          padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(e.skillName ?? "", 
+              style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600, color: m_colors.content_01_color)),
+                SizedBox(height: 16),
+
+                _createSkillsView(
+                  list: e.children ?? [],
+                  selectedSkills: selectedSkillsLists,
+                  onSelected: (selectedModelList) {
+                    setState(() {
+                      selectedSkillsLists = selectedModelList;
+                    });
+                  },
                 )
               ],
             ),
-          ),
-          //按钮保存
-          Positioned(
-            child: Container(
-              color: Colors.white,
-              padding: EdgeInsets.fromLTRB(16, 17, 16, 30),
-              child: m_Button(
-                text: "保存",
-                OnPressed: () {
-                  Navigator.of(context).pop(selectedSkillsLists);
-                },
+          );
+        }).toList(),
+      ),
+    );
+  }
+
+
+  /// 搜索view
+  Widget searchList(BuildContext context) {
+    return Expanded(
+      child: ListView.builder(
+          itemCount: searchTagList.length,
+          itemBuilder: (BuildContext context, int index) {
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedSkillsLists.add(searchTagList[index]);
+                  isShowSearch = false;
+                  textController.text = '';
+                });
+              },
+              child: Container(
+                height: 60,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(searchTagList[index].skillName ?? '', style: TextStyle(fontWeight:  FontWeight.w400, fontSize: 18, color: m_colors.title_01_color)),
+                    SizedBox(height: 18),
+                    Divider(height: 1, color: m_colors.disableColor)
+                  ]),
               ),
-            ),
-            bottom: 10,
-            left: 0,
-            right: 0,
-            height: 100,
-          )
-        ],
+            );
+          },
       ),
     );
   }
 }
+
 
 //选择的view
 class _CreateSeleteSkillView extends StatefulWidget {
@@ -232,7 +369,7 @@ class __createSkillsViewState extends State<_createSkillsView> {
         children: widget.list.map((e) {
           return GestureDetector(
               onTap: () {
-                print("点击${e.skillName}");
+                print("点击：${e.skillName}, ${widget.selectedSkills.length}");
                 setState(() {
                   if (e.selected!) {
                     widget.selectedSkills =
@@ -265,6 +402,16 @@ class __createSkillsViewState extends State<_createSkillsView> {
         }).toList(),
       ),
     );
+  }
+
+  /// 当前标签选中
+  isSelectTag(SkillsClassModel tag){
+    widget.selectedSkills.map((e) {
+      if (e.id == tag.id) {
+        return true;
+      }
+    });
+    return false;
   }
 }
 

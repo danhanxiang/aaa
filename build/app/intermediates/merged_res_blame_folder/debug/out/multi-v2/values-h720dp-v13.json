@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.tntlinking.ttsl_packs.app-mergeDebugResources-29:/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/danwanli/.gradle/caches/transforms-3/dfad611ff7c07b0238bfb0182ee0b30c/transformed/appcompat-1.5.1/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}

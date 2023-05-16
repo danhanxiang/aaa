@@ -1,0 +1,6 @@
+framework module umeng_common_sdk {
+  umbrella header "umeng_common_sdk-umbrella.h"
+
+  export *
+  module * { export * }
+}

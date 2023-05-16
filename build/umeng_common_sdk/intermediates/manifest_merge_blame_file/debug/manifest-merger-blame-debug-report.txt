@@ -1,0 +1,11 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.umeng.umeng_common_sdk" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="16"
+6-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_common_sdk-1.2.5/android/src/main/AndroidManifest.xml
+7        android:targetSdkVersion="16" />
+7-->/Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_common_sdk-1.2.5/android/src/main/AndroidManifest.xml
+8
+9</manifest>

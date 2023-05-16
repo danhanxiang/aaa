@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:people_living_flutterdemo/ProjectConfig/m_colors.dart';
+import 'package:people_living_flutterdemo/core/extension/int_extension.dart';
 
 // FocusScope.of(context).requestFocus(FocusNode()); 收起键盘
 
@@ -166,8 +167,8 @@ class m_textFiledBtnState extends State<m_textFiledBtn> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
-      padding: EdgeInsets.fromLTRB(0, 26, 0, 0),
+      margin: EdgeInsets.symmetric(horizontal: 16.px),
+      padding: EdgeInsets.only(top: 26.px),
       child: TextField(
         readOnly: true,
         controller: inputext(widget.TextEditingtext ?? ""),
@@ -176,16 +177,16 @@ class m_textFiledBtnState extends State<m_textFiledBtn> {
           hintStyle: TextStyle(color: m_colors.content_02_color),
           border: InputBorder.none,
           suffixIcon: Padding(
-            padding: EdgeInsets.all(11),
+            padding: EdgeInsets.all(11.px),
             child: Image.asset(
               "images/person/icon_person_meau_arrow.png",
-              width: 8,
-              height: 8,
+              width: 8.px,
+              height: 8.px,
               fit: BoxFit.cover,
             ),
           ),
         ),
-        style: TextStyle(fontSize: 14, color: m_colors.title_01_color),
+        style: TextStyle(fontSize: 14.px, color: m_colors.title_01_color),
         onTap: widget.onTap,
       ),
       decoration: BoxDecoration(

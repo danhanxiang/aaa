@@ -1,0 +1,4 @@
+R_DEF: Internal format may change without notice
+local
+style DisablePreviewTheme
+xml fluwx_file_provider_paths

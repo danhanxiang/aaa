@@ -20,7 +20,6 @@ class DioRequest {
 
   /// 构造函数
   DioRequest({required bool is_gateway}) {
-    bool isGateway = false;
     dio = Dio();
 
     dio.options = BaseOptions(
@@ -47,10 +46,12 @@ class DioRequest {
         options.headers = {
           "apiVersion": "1.0",
           "os": "3", // 1.ios, 2.android 3flutter
+          "loginRole": User.loginRole,
           "Authorization": "Bearer" + " " + User.token,
         };
       }
       print("\n================== 请求数据 ================== ");
+      print("请求方式：${options.method}");
       print("${options.contentType}");
       print("http-->url:${options.uri.toString()}");
       print("http-->headers:${options.headers}");
@@ -60,11 +61,11 @@ class DioRequest {
 
       return handler.next(options);
     }, onResponse: (response, handler) {
-      print("\n================== 响应数据================== ");
-      print("\nhttp-->code:  ${response.statusCode} ");
-      // print("Json源数据 = ${jsonEncode(response.data)}");
+      // print("\n================== 响应数据================== ");
+      // print("\nhttp-->code:  ${response.statusCode} ");
+      print("Json源数据 = ${jsonEncode(response.data)}");
       // print("data 数据 = ${response.data}");
-      LogUtil.p('${response.data}', title: 'json返回数据');
+      LogUtils.p('${response.data}', title: 'json返回数据');
       if (response.data["code"] == 401 &&
           response.data["message"] == "token已过期,请重新获取最新token") {
         // 重新登录
@@ -81,11 +82,14 @@ class DioRequest {
     }));
 
     login(dynamic data){
+      print("00999------------------------------------------------");
       if (data["code"] == 401 && data["message"] == "token已过期,请重新获取最新token") {
         print("token 过期 重新登录");
         // 重新登录
-        User.saveIsLogin(false);
-        getIt<NavigateService>().pushNamed(LoginView.routeName);
+        if (User.isLogin){
+          User.saveIsLogin(false);
+          getIt<NavigateService>().pushNamed(LoginView.routeName);
+        }
       }
     }
   }

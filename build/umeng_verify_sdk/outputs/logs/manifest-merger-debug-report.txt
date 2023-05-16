@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml:1:1-3:12
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml:1:1-3:12
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml:1:1-3:12
+	package
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml:2:3-39
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+		ADDED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml
+		INJECTED from /Library/Sdkflutter/.pub-cache/hosted/pub.dartlang.org/umeng_verify_sdk-1.0.0/android/src/main/AndroidManifest.xml

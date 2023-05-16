@@ -1,15 +1,16 @@
+import 'package:people_living_flutterdemo/core/models/otherModel/OtherManager.dart';
 import 'package:people_living_flutterdemo/core/service/NetWork/httpManager.dart';
 import 'package:people_living_flutterdemo/ProjectConfig/user_manager.dart';
 import '../../models/index.dart';
 
 class PersonalService {
-//获取首页职位推荐列表
+
   static PostUpdateHeadImg(
       String imgfile, Function(ResultData object) onCompletion) async {
-    await HttpManager.POST_file("/developer/modify/avatar", {}, imgfile, "png")
-        .then((value) {
-      onCompletion(value);
-    });
+    // await HttpManager.POST_file("/developer/modify/avatar", {}, imgfile, "png")
+    //     .then((value) {
+    //   onCompletion(value);
+    // });
   }
 
 //获取入驻资料
@@ -355,10 +356,37 @@ class PersonalService {
     });
   }
 
+  //获取工作行业源数据
+  static getCompanyPeopleList(Function(ResultData object) onCompletion) async {
+    await HttpManager.GET("/dictionary/getByParentId/2").then((value) {
+      if (value.isSuccess) {
+        List<IndustryModel> lists = [];
+        for (var item in value.data) {
+          lists.add(IndustryModel.fromJson(item));
+        }
+        value.data = lists;
+      }
+      onCompletion(value);
+    });
+  }
+
+  //获取工作行业源数据
+  static getWorkTypeList(Function(ResultData object) onCompletion) async {
+    await HttpManager.GET("/dictionary/getByParentId/10").then((value) {
+      if (value.isSuccess) {
+        List<IndustryModel> lists = [];
+        for (var item in value.data) {
+          lists.add(IndustryModel.fromJson(item));
+        }
+        value.data = lists;
+      }
+      onCompletion(value);
+    });
+  }
+
   //获取技能标签源数据
   //careerDirectionId 职业方向ID
-  static getSkillsList(String careerDirectionId,
-      Function(ResultData object) onCompletion) async {
+  static getSkillsList(String careerDirectionId, List<SkillsClassModel> sltSkillList, Function(ResultData object) onCompletion) async {
     await HttpManager.GET("/skill/tree/developer",
         params: {"careerDirectionId": careerDirectionId}).then((value) {
       if (value.isSuccess) {
@@ -368,6 +396,14 @@ class PersonalService {
           List<SkillsClassModel> SkillsClassModelList = [];
           for (SkillsClassModel model in skillsmodel.children!) {
             model.selected = false;
+
+            /// 遍历选中
+            for (var selectModel in sltSkillList) {
+              if(selectModel.id == model.id) {
+                model.selected = true;
+              }
+            }
+
             SkillsClassModelList.add(model);
           }
           skillsmodel.children = SkillsClassModelList;
@@ -377,5 +413,49 @@ class PersonalService {
       }
       onCompletion(value);
     });
+  }
+
+  static getSearchTags(String skillName, Function(ResultData object) onCompletion) async {
+    await HttpManager.GET('/skill/list/developer/search', params: {'skillName': skillName}).then((value) {
+      if (value.isSuccess) {
+         List<SkillsClassModel> lists = [];
+        for (var item in value.data) {
+          SkillsClassModel skillsmodel = SkillsClassModel.fromJson(item);
+          lists.add(skillsmodel);
+        }
+        value.data = lists;
+      }
+      onCompletion(value);
+    });
+  }
+
+  static getAddDiyTag(String careerDirectionId, String tagTitle, Function(ResultData object) onCompletion) async {
+    await HttpManager.GET('/skill/checkSkillName', 
+    params: {'careerDirectionId': careerDirectionId, 'skillName': tagTitle}).then((value) {
+      if (value.isSuccess) {
+        SkillsClassModel skillsmodel = SkillsClassModel.fromJson(value.data);
+        value.data = skillsmodel;
+      }
+      onCompletion(value);
+    });
+  }
+
+  /// 获取职业方向
+  // static getCareerDiection(Function(ResultData object) onCompletion) async {
+  //   await HttpManager.GET(
+  //     '/dictionary/getByParentId/6',
+  //     params: {'version' : 2}).then((value) {
+  //     if (value.isSuccess) {
+
+  //       value.data = OtherManager.fromJson(value.data);
+  //     }
+  //     onCompletion(value);
+  //   });
+  // }
+  static Future<List<OtherModel>> getCareerDiection() async {
+    final result = await HttpManager.request('/dictionary/getByParentId/6',
+       params: {'version' : 2});
+    final model =  OtherManager.fromJson(result);
+    return model.data ?? [];
   }
 }

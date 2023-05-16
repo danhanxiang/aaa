@@ -39,8 +39,9 @@ class _HistoricalOrdersState extends State<HistoricalOrders> {
     // print("-111--:$args");
     print(widget.title);
     return Scaffold(
-      appBar: m_AppBar(context, "历史订单"),
+      appBar: m_AppBar(context, "历史订单", color: Colors.white),
       // 修改主题颜色
+        backgroundColor: Colors.white,
       floatingActionButton: Theme(
         data: Theme.of(context).copyWith(
           colorScheme: Theme.of(context).colorScheme.copyWith(
@@ -189,7 +190,7 @@ class OrderItemListView extends StatelessWidget {
                 // return orderItemWidget(list[index]);
               },
         );
-        }),
+        })
     );
   }
 }

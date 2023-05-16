@@ -1,5 +1,7 @@
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:people_living_flutterdemo/ProjectConfig/ProjectConfig.dart';
+import 'package:people_living_flutterdemo/core/extension/int_extension.dart';
+import 'package:people_living_flutterdemo/ui/shared/app_size_fit.dart';
 import 'package:people_living_flutterdemo/utils/log.dart';
 
 import 'package:video_player/video_player.dart';
@@ -196,152 +198,155 @@ class LoginBtnView extends StatelessWidget {
   const LoginBtnView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MainButton(
-        text: '开始',
-        OnPressed: () {
-          bkLog('message', StackTrace.current);
-          UMCustomModel uiConfig = UMCustomModel();
-          double screenWidth = MediaQuery.of(context).size.width;
-          double screenHeight = MediaQuery.of(context).size.height;
+    return Padding(
+      padding: EdgeInsets.only(top: 16.px, right: 16.px, bottom: BKSizeFit.statusBottomHeight),
+      child: MainButton(
+          text: '开始',
+          OnPressed: () {
+            bkLog('message', StackTrace.current);
+            UMCustomModel uiConfig = UMCustomModel();
+            double screenWidth = MediaQuery.of(context).size.width;
+            double screenHeight = MediaQuery.of(context).size.height;
 
-          if (Platform.isIOS) {
-            uiConfig.backgroundColor_ios = Colors.white.value;
-            uiConfig.alertTitleBarColor_ios = Colors.white.value;
-            uiConfig.alertTitle_ios = [
-              '',
-              Colors.white.value,
-              12.0
-            ]; //标题栏title设置nil
-            uiConfig.alertCloseImage_ios = 'icon_login_off'; //关闭按钮图片设置
-            uiConfig.alertCloseItemFrame_ios = [
-              screenWidth - 55,
-              20,
-              30,
-              30,
-            ]; //关闭按钮frame
+            if (Platform.isIOS) {
+              uiConfig.backgroundColor_ios = Colors.white.value;
+              uiConfig.alertTitleBarColor_ios = Colors.white.value;
+              uiConfig.alertTitle_ios = [
+                '',
+                Colors.white.value,
+                12.0
+              ]; //标题栏title设置nil
+              uiConfig.alertCloseImage_ios = 'icon_login_off'; //关闭按钮图片设置
+              uiConfig.alertCloseItemFrame_ios = [
+                screenWidth - 55,
+                20,
+                30,
+                30,
+              ]; //关闭按钮frame
 
-            //电话号码显示frame
-            double width = 194.0;
-            uiConfig.numberFrame = [(screenWidth - width) / 2, 80, width, 60];
-            uiConfig.numberFont = 36; //号码字体大小
+              //电话号码显示frame
+              double width = 194.0;
+              uiConfig.numberFrame = [(screenWidth - width) / 2, 80, width, 60];
+              uiConfig.numberFont = 36; //号码字体大小
 
-            uiConfig.sloganFrame = [(screenWidth - width) / 2, 118, width, 60];
-            uiConfig.loginBtnFrame = [20, 230, -1, screenWidth - 40, 54];
-            uiConfig.loginBtnText = [
-              '',
-              Colors.white.value,
-              16
-            ]; //登录按钮  这里设置成一张图片了 所以文字为nil
+              uiConfig.sloganFrame = [(screenWidth - width) / 2, 118, width, 60];
+              uiConfig.loginBtnFrame = [20, 230, -1, screenWidth - 40, 54];
+              uiConfig.loginBtnText = [
+                '',
+                Colors.white.value,
+                16
+              ]; //登录按钮  这里设置成一张图片了 所以文字为nil
 
-            uiConfig.loginBtnBgImgs_ios = [
-              'LargeButton',
-              'LargeButton',
-              'LargeButton'
-            ];
-            double changeBtnWidth = 140.0;
-            uiConfig.changeBtnFrame = [
-              (screenWidth - changeBtnWidth) / 2,
-              310,
-              changeBtnWidth,
-              40.0,
-            ];
+              uiConfig.loginBtnBgImgs_ios = [
+                'LargeButton',
+                'LargeButton',
+                'LargeButton'
+              ];
+              double changeBtnWidth = 140.0;
+              uiConfig.changeBtnFrame = [
+                (screenWidth - changeBtnWidth) / 2,
+                310,
+                changeBtnWidth,
+                40.0,
+              ];
 
-            uiConfig.changeBtnTitle = ['其他手机号码登录', Colors.black.value, 16];
-            uiConfig.checkBoxIsChecked = true; //协议默认勾选
-            uiConfig.checkBoxIsHidden = true;
-            uiConfig.privacyOne = ['《天天数链开发者用户协议》', ProjectConfig.YHXY];
-            //'点击一键登录并登录或更换手机号，表示您已阅读',
-            uiConfig.privacyConectTexts = ['》和'];
-            uiConfig.privacyPreText = '点击一键登录并登录或更换手机号，表示您已阅读《';
-            uiConfig.privacySufText = '并同意其中全部内容';
-            uiConfig.privacyColors = [Colors.grey.value, Colors.black.value];
-            uiConfig.hideNavBackItem = true; //隐藏导航栏
-            uiConfig.alertBlurViewAlpha_ios = 0.3;
-            uiConfig.contentViewFrame = [
-              1,
-              340,
-              screenWidth - 2,
-              screenHeight - 340.0
-            ]; //弹窗大小
+              uiConfig.changeBtnTitle = ['其他手机号码登录', Colors.black.value, 16];
+              uiConfig.checkBoxIsChecked = true; //协议默认勾选
+              uiConfig.checkBoxIsHidden = true;
+              uiConfig.privacyOne = ['《天天数链开发者用户协议》', ProjectConfig.YHXY];
+              //'点击一键登录并登录或更换手机号，表示您已阅读',
+              uiConfig.privacyConectTexts = ['》和'];
+              uiConfig.privacyPreText = '点击一键登录并登录或更换手机号，表示您已阅读《';
+              uiConfig.privacySufText = '并同意其中全部内容';
+              uiConfig.privacyColors = [Colors.grey.value, Colors.black.value];
+              uiConfig.hideNavBackItem = true; //隐藏导航栏
+              uiConfig.alertBlurViewAlpha_ios = 0.3;
+              uiConfig.contentViewFrame = [
+                1,
+                340,
+                screenWidth - 2,
+                screenHeight - 340.0
+              ]; //弹窗大小
 
-          } else {
-            Navigator.of(context).pushNamed(CodePhoneView.routeName);
-            /*
-            uiConfig.contentViewFrame = [-1, -1, 320, 640];
-            uiConfig.alertTitleBarFrame_ios = [80, 100, 260, 500];
+            } else {
+              Navigator.of(context).pushNamed(CodePhoneView.routeName);
+              /*
+              uiConfig.contentViewFrame = [-1, -1, 320, 640];
+              uiConfig.alertTitleBarFrame_ios = [80, 100, 260, 500];
 //uiConfig.animationDuration_ios=0;
-            uiConfig.alertBlurViewColor_ios = Colors.red.value;
-            uiConfig.alertBlurViewAlpha_ios = 0.8;
-            uiConfig.alertTitle_ios = ["aaaabbb", Colors.red.value, 20];
-            uiConfig.navColor = Colors.orange.value;
-            uiConfig.loginBtnText = ["一键登录1", Colors.orange.value, 20];
-            uiConfig.privacyOne = ["协议1", "https://www.umeng.com"];
-            UMCustomWidget customButton =
-                UMCustomWidget("button1", UMCustomWidgetType.button);
-            //  customButton.widgetId="button1";
-            // customButton.type=UMCustomWidgetType.button;
-            customButton.title = "Btn";
-            customButton.titleFont = 20;
-            customButton.textAlignment = UMCustomWidgetTextAlignmentType.right;
-            customButton.left = 20;
-            customButton.top = 20;
-            customButton.width = 200;
-            customButton.height = 50;
-            customButton.backgroundColor = Colors.red.value;
-            customButton.titleColor = Colors.black.value;
-            customButton.isClickEnable = false;
-            customButton.btnBackgroundResource_android = "btn_selector";
-            customButton.rootViewId = UMRootViewId.body;
-            UMCustomWidget customButton1 =
-                UMCustomWidget("button2", UMCustomWidgetType.button);
-            //   customButton1.widgetId="button2";
-            //  customButton1.type=UMCustomWidgetType.button;
-            customButton1.left = 100;
-            customButton1.top = 530;
-            customButton1.width = 200;
-            customButton1.height = 50;
-            customButton1.titleColor = Colors.red.value;
-            customButton1.title = "自定义控件2";
-            customButton1.backgroundColor = Colors.blue.value;
-            customButton1.rootViewId = UMRootViewId.title_bar;
+              uiConfig.alertBlurViewColor_ios = Colors.red.value;
+              uiConfig.alertBlurViewAlpha_ios = 0.8;
+              uiConfig.alertTitle_ios = ["aaaabbb", Colors.red.value, 20];
+              uiConfig.navColor = Colors.orange.value;
+              uiConfig.loginBtnText = ["一键登录1", Colors.orange.value, 20];
+              uiConfig.privacyOne = ["协议1", "https://www.umeng.com"];
+              UMCustomWidget customButton =
+                  UMCustomWidget("button1", UMCustomWidgetType.button);
+              //  customButton.widgetId="button1";
+              // customButton.type=UMCustomWidgetType.button;
+              customButton.title = "Btn";
+              customButton.titleFont = 20;
+              customButton.textAlignment = UMCustomWidgetTextAlignmentType.right;
+              customButton.left = 20;
+              customButton.top = 20;
+              customButton.width = 200;
+              customButton.height = 50;
+              customButton.backgroundColor = Colors.red.value;
+              customButton.titleColor = Colors.black.value;
+              customButton.isClickEnable = false;
+              customButton.btnBackgroundResource_android = "btn_selector";
+              customButton.rootViewId = UMRootViewId.body;
+              UMCustomWidget customButton1 =
+                  UMCustomWidget("button2", UMCustomWidgetType.button);
+              //   customButton1.widgetId="button2";
+              //  customButton1.type=UMCustomWidgetType.button;
+              customButton1.left = 100;
+              customButton1.top = 530;
+              customButton1.width = 200;
+              customButton1.height = 50;
+              customButton1.titleColor = Colors.red.value;
+              customButton1.title = "自定义控件2";
+              customButton1.backgroundColor = Colors.blue.value;
+              customButton1.rootViewId = UMRootViewId.title_bar;
 
-            UMCustomWidget customTextView =
-                UMCustomWidget("textView", UMCustomWidgetType.textView);
-            //  customButton2.widgetId="textView";
-            //  customButton2.type=UMCustomWidgetType.textView;
-            customTextView.left = 20;
-            customTextView.top = 20;
-            customTextView.width = 200;
-            customTextView.height = 200;
-            customTextView.title = "自\n定\n义\n控\n件\nTV";
-            customTextView.titleFont = 50;
-            customTextView.textAlignment =
-                UMCustomWidgetTextAlignmentType.center;
-            customTextView.titleColor = Colors.black.value;
-            customTextView.backgroundColor = Colors.red.value;
-            customTextView.isClickEnable = false;
-            customTextView.isShowUnderline = true;
-            customTextView.isSingleLine = false;
-            customTextView.lines = 3;
-            customTextView.rootViewId = UMRootViewId.number;
+              UMCustomWidget customTextView =
+                  UMCustomWidget("textView", UMCustomWidgetType.textView);
+              //  customButton2.widgetId="textView";
+              //  customButton2.type=UMCustomWidgetType.textView;
+              customTextView.left = 20;
+              customTextView.top = 20;
+              customTextView.width = 200;
+              customTextView.height = 200;
+              customTextView.title = "自\n定\n义\n控\n件\nTV";
+              customTextView.titleFont = 50;
+              customTextView.textAlignment =
+                  UMCustomWidgetTextAlignmentType.center;
+              customTextView.titleColor = Colors.black.value;
+              customTextView.backgroundColor = Colors.red.value;
+              customTextView.isClickEnable = false;
+              customTextView.isShowUnderline = true;
+              customTextView.isSingleLine = false;
+              customTextView.lines = 3;
+              customTextView.rootViewId = UMRootViewId.number;
 
-            uiConfig.customWidget = [
-              customButton.toJsonMap(),
-              customButton1.toJsonMap(),
-              customTextView.toJsonMap()
-            ];
-            */
-          }
-
-          UmengVerifySdk.accelerateLoginPageWithTimeout(3).then((result) {
-            print("登录加速结果 $result");
-            if (result['resultCode'] == '600000') {
-              UmengVerifySdk.getLoginTokenWithTimeout(3, uiConfig);
-            }else {
-               Navigator.of(context).pushNamed(CodePhoneView.routeName);
+              uiConfig.customWidget = [
+                customButton.toJsonMap(),
+                customButton1.toJsonMap(),
+                customTextView.toJsonMap()
+              ];
+              */
             }
-          });
-        });
+
+            UmengVerifySdk.accelerateLoginPageWithTimeout(3).then((result) {
+              print("登录加速结果 $result");
+              if (result['resultCode'] == '600000') {
+                UmengVerifySdk.getLoginTokenWithTimeout(3, uiConfig);
+              }else {
+                 Navigator.of(context).pushNamed(CodePhoneView.routeName);
+              }
+            });
+          }),
+    );
   }
 }
 
@@ -352,7 +357,7 @@ void initGetLogin(String token) {
     if (object.isSuccess) {
       if (object.code == 200 &&
           object.data['access_token'].toString().isNotEmpty) {
-        LoginService.GetUserInfo((object) {
+        LoginService.GetDevUserInfo((object) {
           if (object.isSuccess) {
             getIt<NavigateService>().pushNamed(Tabs.routeName);
             EasyLoading.showToast('登录成功');

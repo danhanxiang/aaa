@@ -15,7 +15,7 @@ Login_userInfo _$Login_userInfoFromJson(Map<String, dynamic> json) =>
       ..createDate = json['createDate'] as String?
       ..status = json['status'] as num?
       ..channel = json['channel'] as String?
-      ..typeId = json['typeId'] as String?
+      ..typeId = json['typeId'] as int?
       ..businessStatus = json['businessStatus'] as num?
       ..sex = json['sex'] as num?
       ..birthday = json['birthday'] as String?
@@ -29,7 +29,7 @@ Login_userInfo _$Login_userInfoFromJson(Map<String, dynamic> json) =>
       ..careerDirectionId = json['careerDirectionId'] as num?
       ..careerDirection = json['careerDirection'] as String?
       ..signContractNum = json['signContractNum'] as num?
-      ..profitTotal = json['profitTotal'] as num?
+      ..profitTotal = json['profitTotal'] as double?
       ..contractStatus = json['contractStatus'] as String?
       ..serviceStatus = json['serviceStatus'] as num?;
 
